@@ -14,7 +14,7 @@ function setup() {
 
 //  The draw function is called @ 30 fps
 function draw() {
-  for(i=1;i<3;i++)
+  //for(i=1;i<3;i++){} put other function inside this to run at 60fps
 background(5,5,5)//get rid of ball trails
 b1.run();
 b2.run();

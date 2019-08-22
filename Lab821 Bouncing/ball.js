@@ -13,16 +13,16 @@ class Ball{
   }
   checkEdges(){//check if touching edge, if so reverse direction
     if(this.x<0){
-      this.dx = this.dx*-1;
+      this.dx = this.dx*-1;//left
     }
     if(this.x>width){
-      this.dx = this.dx*-1;
+      this.dx = this.dx*-1;//right
     }
     if(this.y<0){
-      this.dy = this.dy*-1;
+      this.dy = this.dy*-1;//bottom
     }
     if(this.y>height){
-      this.dy = this.dy*-1;
+      this.dy = this.dy*-1;//top
     }
   }
   update(){//update location
