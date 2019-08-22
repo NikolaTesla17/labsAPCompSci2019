@@ -11,6 +11,7 @@ function setup() {
   for(q=1;q<10;q++){
   balls[q] = new Ball(random(width),random(height),random(-5,5),random(-5,5))
 }
+img = loadImage('cat.png');
 }
 
 //  The draw function is called @ 30 fps
@@ -18,6 +19,7 @@ function draw() {
   //for(i=1;i<3;i++){} put other function inside this to run at 60fps
 background(5,5,5)//get rid of ball trails
   for(q=1;q<10;q++){
+      image(img, 50, 50);
 balls[q].run();
 }
 }
