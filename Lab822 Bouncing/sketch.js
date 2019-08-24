@@ -21,16 +21,15 @@ function draw() {
 ballsRun(n)
 }
 
-ballsInit(i){
+ballsInit(i)
 for(q=0;q<i;q++){
 balls[q] = new Ball(random(width),random(height),random(-5,5),random(-5,5))
 }
-}
 
-ballsRun(){
+
+ballsRun()
   background(5,5,5)//get rid of ball trails
     for(q=0;q<n;q++){
         image(img, 50, 50);
   balls[q].run();
   }
-}
