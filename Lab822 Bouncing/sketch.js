@@ -11,7 +11,7 @@ function setup() {
   background(5, 5, 5);
   fill(200, 30, 150);
   ballsInit(n);
-  img = loadImage('cat.png');
+  // img = loadImage('cat.png');
 }
 
 
@@ -27,7 +27,7 @@ balls[q] = new Ball(random(width),random(height),random(-5,5),random(-5,5))
 }
 
 
-ballsRun()
+ballsRun() 
   background(5,5,5)//get rid of ball trails
     for(q=0;q<n;q++){
         image(img, 50, 50);
