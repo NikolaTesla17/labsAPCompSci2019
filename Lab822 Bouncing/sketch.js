@@ -1,7 +1,6 @@
 //  Nayan Smuek
 // 	8/21/19
-//  This is a comment
-//  The setup function function is called once when your program begins\
+//  Project 8/22
 
 var balls = [];
 var x = prompt("Number of Balls","42"); //user entered number of balls page dialog
