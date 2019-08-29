@@ -21,7 +21,7 @@ ballsDraw();
 }
 
 function ballsDraw(){
-  background(5,5,5)//get rid of ball trails
+  background(5,5,5,50)//get rid of ball trails
   for(i=0;i<x;i++){
 balls[i].run();
 }
