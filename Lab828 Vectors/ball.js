@@ -12,15 +12,15 @@ class Ball{
     }
     checkEdges(){//check if touching edge, if so reverse direction
       if(this.loc.x < 0){
+        this.vel.x = -this.vel.x;//left
+      }
+      if(this.loc.x > width){//right
         this.vel.x = -this.vel.x;
       }
-      if(this.loc.x > width){
-        this.vel.x = -this.vel.x;
-      }
-      if(this.loc.y < 0){
+      if(this.loc.y < 0){//down
         this.vel.y = -this.vel.y;
       }
-      if(this.loc.y > height){
+      if(this.loc.y > height){//up
         this.vel.y = -this.vel.y;
       }
     }
