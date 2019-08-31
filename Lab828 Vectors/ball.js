@@ -26,10 +26,10 @@ class Ball{
     }
     update(){//update location
       this.vel.add(this.acc);
-      this.loc.add(this.vel)
+      this.loc.add(this.vel);//add velocity to make gravity
     }
     render(){//render one frame
       fill(this.clr);
-      ellipse(this.loc.x, this.loc.y, 10, 10);
+      ellipse(this.loc.x, this.loc.y, 10, 10);//render ball, change if you want other shapes
     }
   }
