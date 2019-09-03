@@ -22,7 +22,7 @@ function loadBalls(numBalls){
     var location = createVector(width/2, height/2);
   var velocity = createVector(0,0);
   var r = 55;
-  var col = color(255, 0, 0);
+  var col = color(255, 255, 255);
   redBall = new Ball(location, velocity, r, col);
 }
 
@@ -33,6 +33,7 @@ function draw() {
   for(var i = 0; i < balls.length; i++){
     balls[i].run();
   }
+  redBall.run();
 }
 
 function ballsDraw(){

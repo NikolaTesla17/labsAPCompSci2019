@@ -27,9 +27,29 @@ function Ball(location, velocity, radius, col){
     this.update=function(){//update location
       this.vel.add(this.acc);
       this.loc.add(this.vel);//add velocity to make gravity
+
+      if(this !== redBall){
+        var d = this.loc.dist(redBall.loc);
+        if(d > 150){
+          var steeringForce = p5.Vector.sub(redBall.loc, this.loc);
+          steeringForce.normalize();
+          steeringForce.mult(0.5);
+          this.vel.add(steeringForce);
+  
+        }
+        if(d < 50){
+          var steeringForce = p5.Vector.sub(this.loc, redBall.loc);
+          steeringForce.normalize();
+          steeringForce.mult(0.5);
+          this.vel.add(steeringForce);
+        }
+        this.loc.add(this.vel);
+  
+      }
+  
     }
     this.render = function(){//render one frame
       fill(this.col);
-      ellipse(this.loc.x, this.loc.y, 10, 10);//render ball, change if you want other shapes
+      ellipse(this.loc.x, this.loc.y, this.rad, this.rad);//render ball, change if you want other shapes
     }
   }
