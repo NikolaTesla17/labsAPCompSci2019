@@ -9,9 +9,18 @@ function setup() {
   cnv.position((windowWidth-width)/2, 30);
   background(5, 5, 5);
   fill(200, 30, 150);
-  for(q=0;q<x;q++){ //create array with number of balls wanted
+  loadBalls(200);
+}
+
+function loadBalls(numBalls){
+  for(q=0;q<x;q++){
     balls[q] = new Ball(random(width),random(height),random(-5,5),random(-5,5))
-  }
+    var location = createVector(random(width), random(height));
+    var velocity = createVector(random(-3,3), random(-3,3));
+    var r = random(20,40);
+    var col = color(random(255), random(255), random(255));
+    balls.push(new Ball(location, velocity, r, col));
+    }
 }
 
 
@@ -26,3 +35,9 @@ function ballsDraw(){
 balls[i].run();
 }
 }
+
+var location = createVector(width/2, height/2);
+var velocity = createVector(0,0);
+var r = 55;
+var col = color(255, 0, 0);
+redBall = new Ball(location, velocity, r, col);
