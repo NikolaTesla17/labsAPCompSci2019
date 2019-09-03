@@ -4,6 +4,7 @@ function Ball(location, velocity, radius, col){
     this.rad = radius;
     this.col = col;
     this.acc = createVector(0, 0.5);
+
   this.run = function(){//use this so you dont have to run all of these for each ball
       this.checkEdges();
       this.update();
@@ -28,7 +29,7 @@ function Ball(location, velocity, radius, col){
       this.loc.add(this.vel);//add velocity to make gravity
     }
     this.render = function(){//render one frame
-      fill(this.clr);
+      fill(this.col);
       ellipse(this.loc.x, this.loc.y, 10, 10);//render ball, change if you want other shapes
     }
   }

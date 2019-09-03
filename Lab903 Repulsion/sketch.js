@@ -14,19 +14,25 @@ function setup() {
 
 function loadBalls(numBalls){
   for(q=0;q<x;q++){
-    balls[q] = new Ball(random(width),random(height),random(-5,5),random(-5,5))
     var location = createVector(random(width), random(height));
-    var velocity = createVector(random(-3,3), random(-3,3));
-    var r = random(20,40);
+    var velocity = createVector(random(-2,2), random(-2,2));
     var col = color(random(255), random(255), random(255));
-    balls.push(new Ball(location, velocity, r, col));
+    balls.push(new Ball(location, velocity, 15, col));
     }
+    var location = createVector(width/2, height/2);
+  var velocity = createVector(0,0);
+  var r = 55;
+  var col = color(255, 0, 0);
+  redBall = new Ball(location, velocity, r, col);
 }
 
 
 function draw() {
   //for(i=1;i<3;i++){} put other function inside this to run at 60fps
-ballsDraw();
+  background(5, 5, 5,20);
+  for(var i = 0; i < balls.length; i++){
+    balls[i].run();
+  }
 }
 
 function ballsDraw(){
@@ -36,8 +42,3 @@ balls[i].run();
 }
 }
 
-var location = createVector(width/2, height/2);
-var velocity = createVector(0,0);
-var r = 55;
-var col = color(255, 0, 0);
-redBall = new Ball(location, velocity, r, col);
