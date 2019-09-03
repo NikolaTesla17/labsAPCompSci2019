@@ -12,6 +12,10 @@ function setup() {
   for(q=0;q<x;q++){ //create array with number of balls wanted
     balls[q] = new Ball(random(width),random(height),random(-5,5),random(-5,5))
   }
+  var loc1 = createVector(width/2, height/2);
+  var vel1 = createVector(0,0);
+  var col = color(255, 0, 0);
+  redBall = new Ball(loc1, vel1, 55, rgb(0,255,0));
 }
 
 
