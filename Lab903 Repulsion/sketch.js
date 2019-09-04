@@ -10,20 +10,17 @@ function setup() {
   cnv.position((windowWidth-width)/2, 30);
   background(5, 5, 5);
   fill(200, 30, 150);
-  loadBalls(200);
+  mainBall = new Ball(width, height, 1 , 1 , -1);
+  loadBalls(x);
 }
 
-function loadBalls(numBalls){
+function loadBalls(n){
   for(q=0;q<x;q++){
-    var location = createVector(random(width), random(height));
-    var velocity = createVector(random(-2,2), random(-2,2));
-    var col = color(random(255), random(255), random(255));
-    balls.push(new Ball(location, velocity, 15, col));
+    mainBall = new Ball(400, 400, 50, 50, -1)
+    for(var i =0; i < n; i++){
+      balls[i] = new Ball(random(800), random(800), random(-3, 3), random(-3, 3), i);
     }
-  var location = createVector(400, 400);
-  var velocity = createVector(random(-2,2), random(-2,2));
-  var col = color(255, 255, 255);
-  Atract = new Ball(location, velocity, 50, col, -1);
+  }
 }
 
 
@@ -33,7 +30,6 @@ function draw() {
   for(var i = 0; i < balls.length; i++){
     balls[i].run();
   }
-  Atract.run();
 }
 
 function ballsDraw(){
