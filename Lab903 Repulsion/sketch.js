@@ -3,6 +3,7 @@
 //  Project 8/22
 
 var balls = [];
+var Atract;
 var x = prompt("Number of Balls","42"); //user entered number of balls page dialog
 function setup() {
   var cnv = createCanvas(800, 800);
@@ -22,7 +23,7 @@ function loadBalls(numBalls){
   var location = createVector(400, 400);
   var velocity = createVector(random(-2,2), random(-2,2));
   var col = color(255, 255, 255);
-  Atract = new Ball(location, velocity, 50, col);
+  Atract = new Ball(location, velocity, 50, col, -1);
 }
 
 

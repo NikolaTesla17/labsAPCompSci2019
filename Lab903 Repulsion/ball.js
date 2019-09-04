@@ -28,25 +28,23 @@ function Ball(location, velocity, radius, col){
       this.vel.add(this.acc);
       this.loc.add(this.vel);//add velocity to make gravity
 
-      if(this !== Atract){
-        var d = this.loc.dist(Atract.loc);
-        if(d > 150){
+        if(id = -1){
+        if(dist > 150){
           var steeringForce = p5.Vector.sub(Atract.loc, this.loc);
           steeringForce.normalize();
           steeringForce.mult(0.5);
           this.vel.add(steeringForce);
-  
         }
-        if(d < 50){
+        if(dist < 50){
           var steeringForce = p5.Vector.sub(this.loc, Atract.loc);
           steeringForce.normalize();
           steeringForce.mult(0.5);
           this.vel.add(steeringForce);
         }
-        this.loc.add(this.vel);
-  
-      }
-  
+      }  else{
+      this.vel.limit(3);
+    }
+      this.loc.add(this.vel);
     }
     this.render = function(){//render one frame
       fill(this.col);
