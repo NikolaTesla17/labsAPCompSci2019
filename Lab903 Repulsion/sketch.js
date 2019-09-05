@@ -3,7 +3,7 @@
 //  Project 8/22
 
 var balls = [];
-var Atract;
+var mainBall;
 var x = prompt("Number of Balls","42"); //user entered number of balls page dialog
 function setup() {
   var cnv = createCanvas(800, 800);
@@ -34,6 +34,7 @@ function draw() {
 
 function ballsDraw(){
   background(5,5,5,50)//get trails back but just a little bit
+  mainBall.run();
   for(i=0;i<x;i++){
 balls[i].run();
 }

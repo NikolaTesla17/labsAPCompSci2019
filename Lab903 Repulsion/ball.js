@@ -27,7 +27,7 @@ class Ball {
     };
     this.update = function () {
       this.vel.add(this.acc);
-      this.loc.add(this.vel); //add velocity to make gravity
+
       if (id = -1) {
         var dist = this.loc.dist(mainBall.loc);
         if (dist > 150) {
@@ -35,12 +35,14 @@ class Ball {
           this.Force.normalize();
           this.Force.mult(.08);
           this.vel.add(this.Force);
+          this.loc.add(this.vel); //add velocity to make gravity
         }
         if (dist < 50) {
-          var steeringForce = p5.Vector.sub(this.loc, Atract.loc);
+          var steeringForce = p5.Vector.sub(this.loc, mainBall.loc);
           steeringForce.normalize();
           steeringForce.mult(0.5);
           this.vel.add(steeringForce);
+          this.loc.add(this.vel); //add velocity to make gravity
         }
       }
       else {
