@@ -26,17 +26,18 @@ function loadBalls(n){
 
 function draw() {
   //for(i=1;i<3;i++){} put other function inside this to run at 60fps
-  background(5, 5, 5,20);
+  background(5, 5, 5);
   for(var i = 0; i < balls.length; i++){
     balls[i].run();
-  }
+  } mainBall.run();
 }
 
 function ballsDraw(){
-  background(5,5,5,50)//get trails back but just a little bit
-  mainBall.run();
+  background(5,5,5)//get trails back but just a little bit
+if (this.id != -1){
   for(i=0;i<x;i++){
 balls[i].run();
+  }
 }
 }
 
