@@ -35,15 +35,15 @@ class Ball {
         if (dist > 250) {
           this.Force = p5.Vector.add(mainBall.loc, this.loc);
           this.Force.normalize();
-          this.Force.mult(.5);
+          this.Force.mult(5);
           this.vel.add(this.Force);
           this.loc.add(this.vel); //add velocity to make gravity
         }
         if (dist < 150) {
-          var steeringForce = p5.Vector.add(this.loc, mainBall.loc);
-          steeringForce.normalize();
-          steeringForce.mult(0.5);
-          this.vel.add(steeringForce);
+          this.Force = p5.Vector.sub(this.loc, mainBall.loc);
+          this.Force.normalize();
+          this.Force.mult(5);
+          this.vel.add(this.Force);
           this.loc.add(this.vel); //add velocity to make gravity
         }
       }
