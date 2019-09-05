@@ -32,24 +32,23 @@ class Ball {
 
       if (id = -1) {
         var dist = this.loc.dist(mainBall.loc);
-        if (dist > 250) {
-          this.Force = p5.Vector.add(mainBall.loc, this.loc);
+        if (dist < 250) {
+          this.Force = p5.Vector.sub(mainBall.loc, this.loc);
           this.Force.normalize();
-          this.Force.mult(5);
+          this.Force.mult(0.8);
           this.vel.add(this.Force);
-          this.loc.add(this.vel); //add velocity to make gravity
         }
         if (dist < 150) {
           this.Force = p5.Vector.sub(this.loc, mainBall.loc);
-          this.Force.normalize();
-          this.Force.mult(5);
+          // this.Force.normalize();
+          this.Force.mult(0.8);
           this.vel.add(this.Force);
-          this.loc.add(this.vel); //add velocity to make gravity
         }
+        //this.loc.add(this.vel); //add velocity to make gravity
       }
         this.vel.limit(3);
 
-      // this.loc.add(this.vel);
+       this.loc.add(this.vel);
     }
     this.render = function () {
       fill(this.clr);

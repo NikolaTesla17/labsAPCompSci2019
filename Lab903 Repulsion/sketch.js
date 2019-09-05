@@ -10,16 +10,17 @@ function setup() {
   cnv.position((windowWidth-width)/2, 30);
   background(5, 5, 5);
   fill(200, 30, 150);
-  mainBall = new Ball(width, height, 1 , 1 , -1);
   loadBalls(x);
 }
 
 function loadBalls(n){
   for(q=0;q<x;q++){
     mainBall = new Ball(400, 400, 50, 50, -1)
-    for(var i =0; i < n; i++){
-      balls[i] = new Ball(random(800), random(800), random(-3, 3), random(-3, 3), i);
-    }
+    balls[q] = new Ball(random(800), random(800), random(-3, 3), random(-3, 3), q);
+  //   for(var i =0; i < n; i++){
+
+  //   }
+  // }
   }
 }
 
