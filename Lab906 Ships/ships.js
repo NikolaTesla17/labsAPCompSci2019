@@ -73,15 +73,8 @@ class Triangle {
           var i = this.loc.x+5;
           var j = this.loc.y+10
         triangle(this.loc.x, this.loc.y, a,b,i,j); //render ball, change if you want other shapes
-      } else{
-    //   fill(this.clr);
-      var a = this.loc.x+50;
-      var b = this.loc.y+80;
-      var i = this.loc.x+150;
-      var j = this.loc.y+10;
-      triangle(this.loc.x, this.loc.y, a, b,i,j);
-    }
+      }
     }
   }
-  }
+}
   
