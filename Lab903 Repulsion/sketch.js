@@ -15,7 +15,7 @@ function setup() {
 
 function loadBalls(n){
   for(q=0;q<x;q++){
-    mainBall = new Ball(400, 400, 50, 50, -1)
+    mainBall = new Ball(100, 500, 50, 50, -1)
     balls[q] = new Ball(random(800), random(800), random(-3, 3), random(-3, 3), q);
   //   for(var i =0; i < n; i++){
 
