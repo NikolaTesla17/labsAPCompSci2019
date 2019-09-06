@@ -25,7 +25,9 @@ class Paddle{
       }
     }
     update(){//update location
-        keyPressed();
+        if (keyIsPressed&&KeyCode){
+            this.loc.y=this.loc.y-5;
+        }
     }
       //this.loc.add(this.vel);
     render(){//render one frame
@@ -33,10 +35,3 @@ class Paddle{
       rect(this.loc.x, this.loc.y, 10, 100);//render ball, change if you want other shapes
     }
   }
-
-  function keyPressed() {
-    if (keyCode === DOWN_ARROW) {
-  //this.vel.add(this.acc);//add acceleration to make gravity
-   this.loc = this.loc-2;
-    }
-}
