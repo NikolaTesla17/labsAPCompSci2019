@@ -2,12 +2,10 @@ class Paddle{
     constructor(x,y,dx,dy){
       this.loc = createVector(x, y);
       this.vel = createVector(dx, dy);
-      //this.acc = createVector (0, 0.2);//acceleration vector add
       this.clr = color(random(255),random(255),random(255));
     }
     run(){//use this so you dont have to run all of these for each ball
       this.checkEdges();
-      this.update();
       this.render();
     }
     checkEdges(){//check if touching edge, if so reverse direction
@@ -24,14 +22,8 @@ class Paddle{
         this.vel.y = -this.vel.y;
       }
     }
-    update(){//update location
-        if (keyIsPressed&&KeyCode){
-            this.loc.y=this.loc.y-5;
-        }
-    }
-      //this.loc.add(this.vel);
     render(){//render one frame
       fill(this.clr);
-      rect(this.loc.x, this.loc.y, 10, 100);//render ball, change if you want other shapes
+      rect(20, mouseY, 10, 100);//render ball, change if you want other shapes
     }
   }

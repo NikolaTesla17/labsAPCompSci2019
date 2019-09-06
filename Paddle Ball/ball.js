@@ -7,6 +7,7 @@ class Ball{
     }
     run(){//use this so you dont have to run all of these for each ball
       this.checkEdges();
+      this.collision();
       this.update();
       this.render();
     }
@@ -22,6 +23,11 @@ class Ball{
       }
       if(this.loc.y > height){//up
         this.vel.y = -this.vel.y;
+      }
+    }
+    collision(){
+      if(this.loc.y==mouseY){
+        console.log("collision");
       }
     }
     update(){//update location
