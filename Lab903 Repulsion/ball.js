@@ -28,8 +28,6 @@ class Ball {
       }
     }
     this.update = function () {
-      // this.vel.add(this.acc);
-
       if (id != -1) {
         var dist = this.loc.dist(mainBall.loc);
         if (dist > 250) {
@@ -48,7 +46,7 @@ class Ball {
         }
         this.loc.add(this.vel); //add velocity to make gravity
       }
-        this.vel.limit(3);
+        this.vel.limit(2);
        this.loc.add(this.vel);
     }
     this.render = function () {
