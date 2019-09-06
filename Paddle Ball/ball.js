@@ -26,7 +26,8 @@ class Ball{
       }
     }
     collision(){
-      if(this.loc.y==mouseY){
+      var t=this.loc.dist(this.loc);
+      if(t == 0){//say dist 0 from vecors
         console.log("collision");
       }
     }
