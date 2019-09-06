@@ -30,21 +30,21 @@ class Triangle {
         if (id > -1) {
         var dist2 = this.loc.dist(secondBall.loc);
           var dist = this.loc.dist(mainBall.loc);
-          if (dist > 11) {
+          if (dist > 11&&dist < 350) {
             this.Force = p5.Vector.sub(mainBall.loc, this.loc);//attract
             this.Force.normalize();
-            this.Force.mult(0.8);
+            this.Force.mult(0.6);
             this.vel.add(this.Force);
             this.vel.add(this.acc);
           }
-          if (dist < 1) {
+          if (dist < 11) {
             this.Force = p5.Vector.sub(this.loc, mainBall.loc);//push
             this.Force.normalize();
             this.Force.mult(0.8);
             this.vel.add(this.Force);
             this.vel.add(this.acc);
           }   
-          if (dist2 > 1) {
+          if (dist2 > 1&&dist2 < 350) {
             this.Force = p5.Vector.sub(this.loc, secondBall.loc);//push
             this.Force.normalize();
             this.Force.mult(0.8);
