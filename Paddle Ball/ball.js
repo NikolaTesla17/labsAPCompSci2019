@@ -7,9 +7,9 @@ class Ball{
     }
     run(){//use this so you dont have to run all of these for each ball
       this.checkEdges();
-      this.collision();
       this.update();
       this.render();
+      this.paddle();
     }
     checkEdges(){//check if touching edge, if so reverse direction
       if(this.loc.x < 0){
@@ -25,14 +25,16 @@ class Ball{
         this.vel.y = -this.vel.y;
       }
     }
-    collision(){
-      var t=this.loc.dist(mouseY);
-      if(t < 50){//say dist 0 from vecors
-        console.log("collision");
+    paddle(){
+      var d = mouseY;
+      console.log(d);
+      if(this.loc.x < 30&&d-50<this.loc.y<d+50){
+        console.log("collide")
+        this.vel.x = -this.vel.x;
       }
     }
     update(){//update location
-      //this.vel.add(this.acc);//add acceleration to make gravity
+      //this.vel.add(this.acc); //add velocity to make gravity
       this.loc.add(this.vel);
     }
     render(){//render one frame
