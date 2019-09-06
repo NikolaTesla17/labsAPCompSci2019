@@ -44,13 +44,6 @@ class Triangle {
             this.vel.add(this.Force);
             this.vel.add(this.acc);
           }   
-        // if (dist2 > 250) {
-        //     this.Force = p5.Vector.sub(secondBall.loc, this.loc);
-        //     this.Force.normalize();
-        //     this.Force.mult(0.8);
-        //     this.vel.add(this.Force);
-        //     this.vel.add(this.acc);
-        //   }
           if (dist2 < 350) {
             this.Force = p5.Vector.sub(this.loc, secondBall.loc);
             this.Force.normalize();
@@ -64,8 +57,6 @@ class Triangle {
          this.loc.add(this.vel);
       }
       this.render = function () {
-          //PushManager()
-          //translate(this.loc.x, this.loc.y)
         fill(this.clr);
         if (this.id>-1){
           var a = this.loc.x+10;
