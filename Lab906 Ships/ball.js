@@ -28,36 +28,12 @@ class Ball {
       }
     }
     this.update = function () {
-      if (id > -1) {
-        var dist = this.loc.dist(mainBall.loc);
-        var disty = this.lox.dist(secondBall.loc);
-        if (dist > 250) {
-          this.Force = p5.Vector.sub(mainBall.loc, this.loc);
-          this.Force.normalize();
-          this.Force.mult(0.8);
-          this.vel.add(this.Force);
-          this.vel.add(this.acc);
-        }
-        if (dist < 150) {
-          this.Force = p5.Vector.sub(this.loc, mainBall.loc);
-          this.Force.normalize();
-          this.Force.mult(0.8);
-          this.vel.add(this.Force);
-          this.vel.add(this.acc);
-        }
-        this.loc.add(this.vel); //add velocity to make gravity
-      }
         this.vel.limit(2);
        this.loc.add(this.vel);
     }
     this.render = function () {
-      fill(this.clr);
-      if (this.id>-1){
-      ellipse(this.loc.x, this.loc.y, 10, 10); //render ball, change if you want other shapes
-    } else{
     fill(this.clr);
     ellipse(this.loc.x, this.loc.y, 50, 50);
-  }
   }
 }
 }

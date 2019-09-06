@@ -16,7 +16,7 @@ function setup() {
 function loadBalls(n){
   for(q=0;q<x;q++){
     mainBall = new Ball(100, 500, 50, 50, -1);
-    secondBall = new Ball(200,300,50,50, -2)
+    secondBall = new Ball(100,700,50,50, -2)
     balls[q] = new Triangle(random(800), random(800), random(-3, 3), random(-3, 3), q);
   }
 }

@@ -14,30 +14,45 @@ class Triangle {
   
       this.checkEdges = function () {
         if (this.loc.x < 0) {
-          this.vel.x = -this.vel.x; //left
+          this.loc.x = 800; //left
         }
         if (this.loc.x > width) { //right
-          this.vel.x = -this.vel.x;
+          this.loc.x = 0;
         }
         if (this.loc.y < 0) { //down
-          this.vel.y = -this.vel.y;
+          this.loc.y = 800;
         }
         if (this.loc.y > height) { //up
-          this.vel.y = -this.vel.y;
+          this.loc.y = 0;
         }
       }
       this.update = function () {
-        if (id != -1) {
+        if (id > -1) {
+        var dist2 = this.loc.dist(secondBall.loc);
           var dist = this.loc.dist(mainBall.loc);
-          if (dist > 250) {
+          if (dist > 450) {
             this.Force = p5.Vector.sub(mainBall.loc, this.loc);
             this.Force.normalize();
             this.Force.mult(0.8);
             this.vel.add(this.Force);
             this.vel.add(this.acc);
           }
-          if (dist < 150) {
+          if (dist < 1) {
             this.Force = p5.Vector.sub(this.loc, mainBall.loc);
+            this.Force.normalize();
+            this.Force.mult(0.8);
+            this.vel.add(this.Force);
+            this.vel.add(this.acc);
+          }   
+        // if (dist2 > 250) {
+        //     this.Force = p5.Vector.sub(secondBall.loc, this.loc);
+        //     this.Force.normalize();
+        //     this.Force.mult(0.8);
+        //     this.vel.add(this.Force);
+        //     this.vel.add(this.acc);
+        //   }
+          if (dist2 < 350) {
+            this.Force = p5.Vector.sub(this.loc, secondBall.loc);
             this.Force.normalize();
             this.Force.mult(0.8);
             this.vel.add(this.Force);
