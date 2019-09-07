@@ -1,3 +1,4 @@
+var p = 0;
 class Ball{
     constructor(x,y,dx,dy){
       this.loc = createVector(x, y);
@@ -27,9 +28,9 @@ class Ball{
     }
     paddle(){
       var d = mouseY;
-      console.log(d);
       if(this.loc.x < 30&&d-50<this.loc.y<d+50){
-        console.log("collide")
+        console.log(p)
+        p++;
         this.vel.x = -this.vel.x;
       }
     }

@@ -25,6 +25,6 @@ class Paddle{
     render(){//render one frame
       fill(this.clr);
       rectMode(CENTER);
-      rect(20, mouseY, 10, 100);//render ball, change if you want other shapes
+      rect(this.loc.x, mouseY, 10, 100);//render ball, change if you want other shapes
     }
   }
