@@ -29,7 +29,7 @@ class Ball{
     paddle(){
       var d = mouseY;
       //if(this.loc.x > 30&&(d-50<this.loc.y)||(this.loc.y<d+50)){
-        if((this.loc.x>=(d-50)&&(d+50)>=this.loc.x)&&this.loc.y < 31){
+        if((this.loc.y>=(d-50)&&(d+50)>=this.loc.y)&&this.loc.x < 31){
         p++;
         console.log(p)
         this.vel.x = -this.vel.x;
