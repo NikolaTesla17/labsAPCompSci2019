@@ -31,7 +31,7 @@ class Ball{
       //if(this.loc.x > 30&&(d-50<this.loc.y)||(this.loc.y<d+50)){
         if((this.loc.y>=(d-50)&&(d+50)>=this.loc.y)&&this.loc.x < 31){
         p++;
-        console.log(p)
+        console.log("Score is " + p)
         this.vel.x = -this.vel.x;
       }
     }
