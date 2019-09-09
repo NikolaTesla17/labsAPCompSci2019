@@ -18,7 +18,9 @@ function setup() {
 
 function draw() {
   //for(i=1;i<3;i++){} put other function inside this to run at 60fps
+  if(p<2){
 ballsDraw();
+  }
 }
 
 function ballsDraw(){
