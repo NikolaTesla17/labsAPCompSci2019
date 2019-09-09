@@ -43,7 +43,8 @@ class Ball{
     }
     win(){
       if(p>1){
-      document.getElementById("score").innerHTML = "you win";
+        cnv.font = '48px serif';
+        cnv.fillText('Hello world', 10, 50);
       }
     }
     render(){//render one frame

@@ -4,7 +4,9 @@
 
 var balls = [];
 var x = 1//prompt("Number of Balls","42"); //user entered number of balls page dialog
+var cnv = createCanvas(800, 800);
 function setup() {
+  //var cnv = createCanvas(800, 800);
   var cnv = createCanvas(800, 800);
   cnv.position((windowWidth-width)/2, 30);
   background(5, 5, 5);
@@ -18,9 +20,9 @@ function setup() {
 
 function draw() {
   //for(i=1;i<3;i++){} put other function inside this to run at 60fps
-  if(p<2){
+  // if(p<5){
 ballsDraw();
-  }
+  // }
 }
 
 function ballsDraw(){
