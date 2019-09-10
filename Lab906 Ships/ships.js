@@ -57,14 +57,13 @@ class Triangle {
          this.loc.add(this.vel);
       }
       this.render = function () {
-        fill(this.clr);
-        if (this.id>-1){
-          var a = this.loc.x+10;
-          var b = this.loc.y+8;
-          var i = this.loc.x+5;
-          var j = this.loc.y+10
-        triangle(this.loc.x, this.loc.y, a,b,i,j); //render ball, change if you want other shapes
-      }
+      fill(this.clr);
+      push();
+      let myHeading = this.vel.heading();
+      translate(this.loc.x, this.loc.y)
+      rotate(myHeading, 0);
+      triangle(-5, 8, 5, 8, 0, -8);
+      pop();
     }
   }
 }
