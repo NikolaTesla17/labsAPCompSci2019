@@ -61,7 +61,8 @@ class Triangle {
       push();//changes dont matter
       let myHeading = this.vel.heading();//
       translate(this.loc.x, this.loc.y)//for orgin
-      rotate(myHeading, 0);
+      rotate(myHeading, 0);//rotate hopefully to where it is pointing
+      console.log(myHeading);
       triangle(-5, 8, 5, 8, 0, -8);
       pop();//things matter again
     }
