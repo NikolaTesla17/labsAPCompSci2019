@@ -63,7 +63,7 @@ class Triangle {
       translate(this.loc.x, this.loc.y)//for orgin
       rotate(myHeading, 0);//rotate hopefully to where it is pointing
       console.log(myHeading);
-      triangle(-5, 8, 5, 8, 0, -8);
+      triangle(-5, 8, 5, 8, 0, -8);//make perfet triangle
       pop();//things matter again
     }
   }
