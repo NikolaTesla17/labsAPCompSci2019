@@ -58,12 +58,12 @@ class Triangle {
       }
       this.render = function () {
       fill(this.clr);
-      push();
-      let myHeading = this.vel.heading();
-      translate(this.loc.x, this.loc.y)
+      push();//changes dont matter
+      let myHeading = this.vel.heading();//
+      translate(this.loc.x, this.loc.y)//for orgin
       rotate(myHeading, 0);
       triangle(-5, 8, 5, 8, 0, -8);
-      pop();
+      pop();//things matter again
     }
   }
 }
