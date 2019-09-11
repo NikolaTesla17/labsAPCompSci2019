@@ -11,7 +11,7 @@ class Ball{
       this.update();
       this.render();
       this.paddle();
-      // this.win();
+      this.win();
     }
     checkEdges(){//check if touching edge, if so reverse direction
       if(this.loc.x < 0){
@@ -33,9 +33,9 @@ class Ball{
         if((this.loc.y>=(d-50)&&(d+50)>=this.loc.y)&&this.loc.x < 31){
         p++;
         console.log("Score is " + p)
-        textSize(90);
+        textSize(200);
         fill(255, 255, 255);
-        text(p, 400, 400)
+        text(p, 400, 400);
         this.vel.x = -this.vel.x;
       }
     }
@@ -43,14 +43,16 @@ class Ball{
       //this.vel.add(this.acc); //add velocity to make gravity
       this.loc.add(this.vel);
     }
-    // win(){
-    //   if(p>1){
-    //     // cnv.font = '48px serif';
-    //     // cnv.fillText('Hello world', 10, 50);
-    //   }
-    // }
+    win(){
+      if(p>1){
+        textSize(200);
+        fill(255, 255, 255);
+        text(YouWin, 400, 400);
+      }
+    }
     render(){//render one frame
       fill(this.clr);
       ellipse(this.loc.x, this.loc.y, 10, 10);//render ball, change if you want other shapes
+      background(5,5,5,25);
     }
   }

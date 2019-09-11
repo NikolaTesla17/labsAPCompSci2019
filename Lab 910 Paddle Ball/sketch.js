@@ -12,7 +12,7 @@ var x = 1//prompt("Number of Balls","42"); //user entered number of balls page d
 function setup() {
   var ctx = createCanvas(800, 800);
   ctx.position((windowWidth-width)/2, 30);
-  background(5, 5, 5,5000);
+  background(5, 5, 5,);
   fill(200, 30, 150);
   for(q=0;q<x;q++){ //create array with number of balls wanted
     balls[q] = new Ball(random(width),random(height),random(-5,5),random(-5,5))
@@ -29,7 +29,7 @@ ballsDraw();
 }
 
 function ballsDraw(){
-  background(5,5,5,5000)//get trails back but just a little bit
+  //background(5,5,5,25)//get trails back but just a little bit
   for(i=0;i<x;i++){
 balls[i].run();
 }
