@@ -45,9 +45,12 @@ class Ball{
     }
     win(){
       if(p>1){
-        textSize(200);
+        background(5,5,255);
+        var w = "You Win!";
+        textSize(80);
         fill(255, 255, 255);
-        text(YouWin, 400, 400);
+        text(w, 200, 400);
+        throw new Error("won");
       }
     }
     render(){//render one frame
