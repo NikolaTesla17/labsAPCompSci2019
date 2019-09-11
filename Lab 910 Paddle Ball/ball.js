@@ -3,7 +3,6 @@ class Ball{
     constructor(x,y,dx,dy){
       this.loc = createVector(x, y);
       this.vel = createVector(dx, dy);
-      this.acc = createVector (0, 0.2);//acceleration vector add
       this.clr = color(random(255),random(255),random(255));
     }
     run(){//use this so you dont have to run all of these for each ball
@@ -47,7 +46,7 @@ class Ball{
         var w = "You Win!";
         textSize(80);
         fill(255, 255, 255);
-        text(w, 200, 400);
+        text(w, 220, 400);
         throw new Error("won");
       }
     }
