@@ -6,10 +6,13 @@
 
 var balls = [];
 var x = 1//prompt("Number of Balls","42"); //user entered number of balls page dialog
-var cnv = canvas.cnv;
+var c = document.getElementById("myCanvas");
+var ctx = c.getContext("2d");
+// ctx.font = "30px Arial";
+// ctx.fillText("Hello World", 10, 50);
 function setup() {
   //var cnv = createCanvas(800, 800);
-  cnv.position((windowWidth-width)/2, 30);
+  ctx.position((windowWidth-width)/2, 30);
   background(5, 5, 5);
   fill(200, 30, 150);
   for(q=0;q<x;q++){ //create array with number of balls wanted
