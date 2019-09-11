@@ -29,7 +29,6 @@ class Ball{
     }
     paddle(){
       var d = mouseY;
-      //if(this.loc.x > 30&&(d-50<this.loc.y)||(this.loc.y<d+50)){
         if((this.loc.y>=(d-50)&&(d+50)>=this.loc.y)&&this.loc.x < 31){
         p++;
         console.log("Score is " + p)
@@ -40,7 +39,6 @@ class Ball{
       }
     }
     update(){//update location
-      //this.vel.add(this.acc); //add velocity to make gravity
       this.loc.add(this.vel);
     }
     win(){
