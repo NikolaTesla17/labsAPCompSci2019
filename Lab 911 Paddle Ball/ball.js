@@ -28,7 +28,7 @@ class Ball{//to make new balls easy to add more
       }
     }
     paddle(){
-      var d = mouseY;
+      var d = mouseY;//location of paddle y
         if((this.loc.y>=(d-50)&&(d+50)>=this.loc.y)&&this.loc.x < 31){//detect paddle hit
         p++;//incriment score
         textSize(200);//large score
@@ -46,7 +46,7 @@ class Ball{//to make new balls easy to add more
         var w = "You Win!";//win string
         textSize(80);//make text fit
         fill(255, 255, 255);//make win white
-        text(w, 220, 400);//write you win
+        text(w, 320, 300);//write you win
         throw new Error("won");//stop game
       }
     }
