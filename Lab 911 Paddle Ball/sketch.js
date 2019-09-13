@@ -8,12 +8,18 @@ function setup() {
   ctx.position((windowWidth-width)/2, 30);//put canvas in the middle
   background(5, 5, 5);//make black background
   fill(200, 30, 150);
-  for(x=0;x<z;x++){
-  balls[x] = new Ball(random(-5,5),random(-5,5));//(random(width),random(height),random(-5,5),random(-5,5))//make the game ball
-  }
+  // for(x=0;x<z;x++){
+  // balls[x] = new Ball(w,e,random(width),random(height));//,random(-5,5),random(-5,5))//make the game ball
+  // }
   paddle1 = new Paddle(20,400);//make the paddle
   oponent = new ai(980,400)
 }
+
+w = random(-5,5);
+e = random(-5,5);
+for(x=0;x<z;x++){
+  balls[x] = new Ball(w,e,random(width),random(height));//,random(-5,5),random(-5,5))//make the game ball
+  }
 
 function draw() {
   for(x=0;x<z;x++){//loop to allow for the creation of multiple balls

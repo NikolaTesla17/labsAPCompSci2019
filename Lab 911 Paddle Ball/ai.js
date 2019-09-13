@@ -11,7 +11,6 @@ class ai{
     //   let r = random(-50, 50);
     //   let q = (mouseY);
     //   let g = q*(r);
-      this.vel.add(this.ball.loc)
       this.loc.add(this.vel);//move things
       rect(this.loc.x, this.loc.y, 10, 100);//render paddle to mouse and over at 10
       this.checkEdges();
