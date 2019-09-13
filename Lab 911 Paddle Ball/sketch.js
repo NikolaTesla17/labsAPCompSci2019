@@ -10,7 +10,7 @@ function setup() {
   fill(200, 30, 150);
   // for(x=0;x<z;x++){
   // balls[x] = new Ball(w,e,random(width),random(height));//,random(-5,5),random(-5,5))//make the game ball
-   }
+  // }
   paddle1 = new Paddle(20,400);//make the paddle
   oponent = new ai(980,400)
 }
