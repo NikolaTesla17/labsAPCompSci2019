@@ -29,7 +29,7 @@ class Ball{//to make new balls easy to add more
     }
     paddle(){
       var d = mouseY;//location of paddle y
-        if((this.loc.y>=(d-50)&&(d+50)>=this.loc.y)&&this.loc.x < 31){//detect paddle hit
+        if((this.loc.y>=(d-50)&&(d+50)>=this.loc.y)&&(this.loc.x < 31)||(this.loc.x > 980)){//detect paddle hit
         p++;//incriment score
         textSize(200);//large score
         fill(255, 255, 255);//make score text white

@@ -12,6 +12,7 @@ function setup() {
   balls[x] = new Ball(random(width),random(height),random(-5,5),random(-5,5))//make the game ball
   }
   paddle1 = new Paddle(20,400);//make the paddle
+  oponent = new ai(980,400)
 }
 
 function draw() {
@@ -19,4 +20,5 @@ function draw() {
   balls[x].run();//runs the ball
   }
   paddle1.run();//runs the paddle 
+  oponent.run();
 }
