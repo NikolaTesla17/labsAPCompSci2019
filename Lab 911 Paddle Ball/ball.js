@@ -1,15 +1,16 @@
 var p = 0;//because non global varriables are hard
 var t = (prompt("What do ypu want to play to?", 2))-1;//win condition user entered for testing
+this.loc = createVector(random(width), random(height));
 class Ball{//to make new balls easy to add more 
     constructor(dx,dy){ //constructor to start things off and make ball
-      this.loc = createVector(x, y);//create a vector for ball's position
+      //this.loc = createVector(x, y);//create a vector for ball's position
       this.vel = createVector(dx, dy);//create a vector for movment for the ball
       this.clr = color(random(255),random(255),random(255));//create random color for the ball
     }
     run(){//use this so you dont have to run all of these for each ball
       this.checkEdges();//bounce ball
       this.update();//move ball
-      this.render();//drqw ball
+      this.render();//draw ball
       this.paddle();//check if the ball hit the paddle
       this.win();//check win condition
     }//end run
