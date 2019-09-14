@@ -17,4 +17,5 @@ function setup() {
 function draw() {
   balls[1].run();//runs the ball
   paddle1.run();//runs the paddle 
+  opponent.run();//run opponent paddle
 }
