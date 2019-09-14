@@ -25,19 +25,14 @@ class ai{
       }
     change(){
         var g = balls[1].loc.y;
-        var f = balls[1].loc.x;
-        if (f<550){
-            var d = Math.abs(0.1*(this.loc.y-g));
-        }
-        if (f>550){
-            var d = Math.abs(0.04*(this.loc.y-g));
-        }
-        console.log(d);
+        var f = 800 - balls[1].loc.x;
+        var d = Math.abs(0.01*f*(this.loc.y-g));
+        console.log(f);
         if(this.loc.y>g){
-        this.loc.y = (this.loc.y)-(d);//(1*d);//change in ball so the bounce on right side is a if else
+        this.loc.y = (this.loc.y)-((0.01*f)+1);//(1*d);//change in ball so the bounce on right side is a if else
         }
         if(this.loc.y<g){
-            this.loc.y = (this.loc.y)+(d);//(1*d);//change in ball so the bounce on right side is a if else
+            this.loc.y = (this.loc.y)+((0.01*f)+1);//(1*d);//change in ball so the bounce on right side is a if else
         }
         this.loc.add(this.vel);//move things
     }
