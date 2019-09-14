@@ -15,8 +15,9 @@ function setup() {
   oponent = new ai(980,400)
 }
 
-w = random(-5,5);
-e = random(-5,5);
+w = Math.random(-5,5);
+e = Math.random(-5,5);
+
 for(x=0;x<z;x++){
   balls[x] = new Ball(w,e,random(width),random(height));//,random(-5,5),random(-5,5))//make the game ball
   }
