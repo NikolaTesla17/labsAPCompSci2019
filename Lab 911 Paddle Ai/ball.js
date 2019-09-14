@@ -44,7 +44,6 @@ class Ball{//to make new balls easy to add more
         text(p, 400, 400);//write score
         this.vel.x = -this.vel.x;//bounce ball
       }
-
     }
     update(){//update location
       this.loc.add(this.vel);//move things

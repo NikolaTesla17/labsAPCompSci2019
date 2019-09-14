@@ -29,15 +29,14 @@ class ai{
         var d = Math.abs(0.01*f*(this.loc.y-g));
         console.log(f);
         if(this.loc.y>g){
-        this.loc.y = (this.loc.y)-((0.01*f)+1.5);//(1*d);//change in ball so the bounce on right side is a if else
+        this.loc.y = (this.loc.y)-((0.01*f)+1.2);//(1*d);//change in ball so the bounce on right side is a if else
         }
         if(this.loc.y<g){
-            this.loc.y = (this.loc.y)+((0.01*f)+1.5);//(1*d);//change in ball so the bounce on right side is a if else
+            this.loc.y = (this.loc.y)+((0.01*f)+1.2);//(1*d);//change in ball so the bounce on right side is a if else
         }
         this.loc.add(this.vel);//move things
     }
     render(){
-
         fill(this.clr);//make random color
         rectMode(CENTER);//make it so the center moves
         rect(this.loc.x, this.loc.y, 10, 100);//render paddle to mouse and over at 10
