@@ -29,13 +29,21 @@ class Ball{//to make new balls easy to add more
     }
     paddle(){
       var d = mouseY;
-        if((this.loc.y>=(d-50)&&(d+50)>=this.loc.y)&&((this.loc.x < 31)||(this.loc.x > 779))){//detect paddle hit
+        if((this.loc.y>=(d-50)&&(d+50)>=this.loc.y)&&(this.loc.x < 31)){//detect paddle hit
         p++;//incriment score
         textSize(200);//large score
         fill(255, 255, 255);//make score text white
         text(p, 400, 400);//write score
         this.vel.x = -this.vel.x;//bounce ball
       }
+      if((this.loc.y>=(d-50)&&(d+50)>=this.loc.y)&&(this.loc.x > 779)){
+        p--;//incriment score
+        textSize(200);//large score
+        fill(255, 255, 255);//make score text white
+        text(p, 400, 400);//write score
+        this.vel.x = -this.vel.x;//bounce ball
+      }
+
     }
     update(){//update location
       this.loc.add(this.vel);//move things

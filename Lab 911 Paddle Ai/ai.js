@@ -1,7 +1,7 @@
 class ai{
     constructor(x,y){//find where to make paddle
       this.loc = createVector(x, y);//make paddle
-      this.vel = createVector(0,-2);
+      this.vel = createVector(0,0);
       this.clr = color(255,0,0);//(random(255),random(255),random(255));//paddle color
     }//end the constructor
     run(){//use this so you dont have to run all of these for each ball
@@ -24,12 +24,21 @@ class ai{
         }
       }
     change(){
-        this.loc.y = (mouseY);//change in ball so the bounce on right side is a if else
+        var d = Math.abs(0.05*(this.loc.y-mouseY));
+        var g = balls[1].loc.y;
+        console.log(g);
+        if(this.loc.y>g){
+        this.loc.y = (this.loc.y)-(1*d);//change in ball so the bounce on right side is a if else
+        }
+        if(this.loc.y<g){
+            this.loc.y = (this.loc.y)+(1*d);//change in ball so the bounce on right side is a if else
+        }
+        this.loc.add(this.vel);//move things
     }
     render(){
+
         fill(this.clr);//make random color
         rectMode(CENTER);//make it so the center moves
-        this.loc.add(this.vel);//move things
         rect(this.loc.x, this.loc.y, 10, 100);//render paddle to mouse and over at 10
     }
 }//end the class
