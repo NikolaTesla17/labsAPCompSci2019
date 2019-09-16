@@ -28,10 +28,10 @@ class ai{
         var f = 800 - balls[1].loc.x;
         console.log(f);
         if(this.loc.y>g){
-        this.loc.y = (this.loc.y)-((0.01*f)+1.2);//(1*d);//change in ball so the bounce on right side is a if else
+        this.loc.y = (this.loc.y)-((0.01*f)+1.3);//(1*d);//change in ball so the bounce on right side is a if else
         }
         if(this.loc.y<g){
-            this.loc.y = (this.loc.y)+((0.01*f)+1.2);//(1*d);//change in ball so the bounce on right side is a if else
+            this.loc.y = (this.loc.y)+((0.01*f)+1.3);//(1*d);//change in ball so the bounce on right side is a if else
         }
         this.loc.add(this.vel);//move things
     }
