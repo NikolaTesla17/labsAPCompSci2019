@@ -34,7 +34,7 @@ class Ball{//to make new balls easy to add more
         p++;//incriment score
         textSize(200);//large score
         fill(255, 255, 255);//make score text white
-        text(p, 400, 400);//write score
+        text(p, 250, 400);//write score
         this.vel.x = -this.vel.x;//bounce ball
         this.vel.y = -this.vel.y;
       }
@@ -49,7 +49,7 @@ class Ball{//to make new balls easy to add more
         var w = "You Win!";//win string
         textSize(80);//make text fit
         fill(255, 255, 255);//make win white
-        text(w, 320, 300);//write you win
+        text(w, 150, 300);//write you win
         throw new Error("won");//stop game
       }
     }
