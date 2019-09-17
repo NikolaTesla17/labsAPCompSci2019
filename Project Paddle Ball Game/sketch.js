@@ -15,8 +15,6 @@ function setup() {
   paddle1= new Paddle(300,500);
 }
 
-
-
 function draw() {
   if(l < 60){
     background(5,5,255);//wipe background make blue
