@@ -25,7 +25,7 @@ function draw() {
   if(l < 30){
     background(5,5,255);//wipe background make blue
     var w = "Press Any Button to Start!";//win string
-    textSize(80);//make text fit
+    textSize(30);//make text fit
     fill(255, 255, 255);//make win white
     text(w, 150, 300);//write you win
     if(t > 1){
