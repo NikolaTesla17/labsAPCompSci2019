@@ -4,6 +4,7 @@
 var z = prompt("how many balls", 2)
 var balls = [];
 var l = 0;
+var t = 0;
 function setup() {
   var ctx = createCanvas(600, 600);//make canvas
   ctx.position((windowWidth-width)/2, 30);//put canvas in the middle
@@ -15,19 +16,26 @@ function setup() {
   paddle1= new Paddle(300,500);
 }
 
+function keyPressed() {
+  console.log("key pressed");
+  t++;
+}
+
 function draw() {
-  if(l < 60){
+  if(l < 30){
     background(5,5,255);//wipe background make blue
-    var w = "Get Ready!";//win string
+    var w = "Press Any Button to Start!";//win string
     textSize(80);//make text fit
     fill(255, 255, 255);//make win white
     text(w, 150, 300);//write you win
+    if(t > 1){
     l++;
+    }
     console.log(l);
   }
-  if((l > 59)&&(l<120)){
+  if((l > 29)&&(l<120)){
     background(5,5,255);//wipe background make blue
-    var w = "Get Set!";//win string
+    var w = "Get Ready!";//win string
     textSize(80);//make text fit
     fill(255, 255, 255);//make win white
     text(w, 150, 300);//write you win
