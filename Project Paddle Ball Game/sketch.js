@@ -15,23 +15,41 @@ function setup() {
   paddle1= new Paddle(300,500);
 }
 
-function start(){
-  for(i=0;i<100;i++){
-  background(5,5,255);//wipe background make blue
-  var w = "You Win!";//win string
-  textSize(80);//make text fit
-  fill(255, 255, 255);//make win white
-  text(w, 150, 300);//write you win
-  l++;
-  }
-}
+
 
 function draw() {
-  if(l == 0){
-    start();
+  if(l < 60){
+    background(5,5,255);//wipe background make blue
+    var w = "Get Ready!";//win string
+    textSize(80);//make text fit
+    fill(255, 255, 255);//make win white
+    text(w, 150, 300);//write you win
+    l++;
+    console.log(l);
   }
+  if((l > 59)&&(l<120)){
+    background(5,5,255);//wipe background make blue
+    var w = "Get Set!";//win string
+    textSize(80);//make text fit
+    fill(255, 255, 255);//make win white
+    text(w, 150, 300);//write you win
+    l++;
+    console.log(l);
+  }
+  if((l > 119)&&(l<140)){
+    background(5,5,255);//wipe background make blue
+    var w = "Go!";//win string
+    textSize(80);//make text fit
+    fill(255, 255, 255);//make win white
+    text(w, 150, 300);//write you win
+    l++;
+    console.log(l);
+  }
+
+  if(l > 139){
   for(x=0;x<z;x++){//loop to allow for the creation of multiple balls
   balls[x].run();//runs the ball
   }
   paddle1.run();
+}
 }
