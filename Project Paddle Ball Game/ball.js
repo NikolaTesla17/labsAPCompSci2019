@@ -1,5 +1,6 @@
 var p = 0;//because non global varriables are hard
 var t = (prompt("What do ypu want to play to?", 2))-1;//win condition user entered for testing
+var j = balls.length - 1;
 class Ball{//to make new balls easy to add more 
     constructor(x,y,dx,dy){ //constructor to start things off and make ball
       this.loc = createVector(x, y);//create a vector for ball's position
@@ -32,13 +33,14 @@ class Ball{//to make new balls easy to add more
     paddle(){
       var d = mouseX;//location of paddle x
         if((this.loc.x>=(d-50)&&(d+50)>=this.loc.x)&&((this.loc.y > 490)&&(this.loc.y<510))){//detect paddle hit
-        // p++;//incriment score
+        console.log(j)
+          // p++;//incriment score
         // textSize(200);//large score
         // fill(255, 255, 255);//make score text white
         // text(p, 250, 400);//write score
         // this.vel.x = -this.vel.x;//bounce ball
         // this.vel.y = -this.vel.y;
-        for(var j = balls.length - 1; j >= 0; j--){
+        for(; j >= 0; j--){
           balls.splice(j, 1)
        }
       }
