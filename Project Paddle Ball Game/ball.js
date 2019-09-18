@@ -38,8 +38,8 @@ class Ball{//to make new balls easy to add more
         // text(p, 250, 400);//write score
         // this.vel.x = -this.vel.x;//bounce ball
         // this.vel.y = -this.vel.y;
-        for(var i = balls.length - 1; i >= 0; i--){
-             balls.splice(i, 1)
+        for(var j = balls.length - 1; j >= 0; j--){
+          balls.splice(j, 1)
        }
       }
     }
