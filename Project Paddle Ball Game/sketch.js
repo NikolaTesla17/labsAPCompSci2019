@@ -35,8 +35,8 @@ function draw() {
   }
   if((l > 29)&&(l<120)){
     background(5,5,255);//wipe background make blue
-    var w = "Get Ready!";//win string
-    textSize(80);//make text fit
+    var w = "Move with your mouse!";//win string
+    textSize(30);//make text fit
     fill(255, 255, 255);//make win white
     text(w, 150, 300);//write you win
     l++;
@@ -44,8 +44,8 @@ function draw() {
   }
   if((l > 119)&&(l<140)){
     background(5,5,255);//wipe background make blue
-    var w = "Go!";//win string
-    textSize(80);//make text fit
+    var w = "Reach 20 points before you run out";//win string
+    textSize(30);//make text fit
     fill(255, 255, 255);//make win white
     text(w, 150, 300);//write you win
     l++;

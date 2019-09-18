@@ -1,4 +1,5 @@
 var p = 0;//because non global varriables are hard
+var h = 25;//ball health change this for difficulty settings
 var t = (prompt("What do ypu want to play to?", 2))-1;//win condition user entered for testing
 class Ball{//to make new balls easy to add more 
     constructor(x,y,dx,dy){ //constructor to start things off and make ball
@@ -8,10 +9,15 @@ class Ball{//to make new balls easy to add more
       this.clr = color(random(255),random(255),random(255));//create random color for the ball
     }
     run(){//use this so you dont have to run all of these for each ball
+      if(h>(-1)){
       this.checkEdges();//bounce ball
       this.update();//move ball
       this.render();//draw ball
       this.paddle();//check if the ball hit the paddle
+      }
+      if(h<0){
+        this.rend();
+      }
       this.win();//check win condition
     }//end run
     checkEdges(){//check if touching edge, if so reverse direction
@@ -26,6 +32,8 @@ class Ball{//to make new balls easy to add more
       }
       if(this.loc.y > height){//up
         this.vel.y = -this.vel.y;//bounce ball
+        console.log("bottom");
+        h--;
       }
     }
     paddle(){
@@ -56,6 +64,9 @@ class Ball{//to make new balls easy to add more
     render(){//render one frame
       fill(this.clr);//make this color
       ellipse(this.loc.x, this.loc.y, 10, 10);//render ball, change if you want other shapes
+      background(5,5,5,25);//give slight trail
+    }
+    rend(){
       background(5,5,5,25);//give slight trail
     }
   }
