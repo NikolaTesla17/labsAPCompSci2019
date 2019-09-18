@@ -1,6 +1,6 @@
 var p = 0;//because non global varriables are hard
 var t = (prompt("What do ypu want to play to?", 2))-1;//win condition user entered for testing
-var j = balls.length - 1;
+var j = z - 1;
 class Ball{//to make new balls easy to add more 
     constructor(x,y,dx,dy){ //constructor to start things off and make ball
       this.loc = createVector(x, y);//create a vector for ball's position
