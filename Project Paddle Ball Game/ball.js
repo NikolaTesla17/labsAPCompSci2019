@@ -41,7 +41,6 @@ class Ball{//to make new balls easy to add more
         for(var i = balls.length - 1; i >= 0; i--){
              balls.splice(i, 1)
        }
-    
       }
     }
     update(){//update location
