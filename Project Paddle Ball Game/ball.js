@@ -1,5 +1,4 @@
 var p = 0;//because non global varriables are hard
-var h = 25;//ball health change this for difficulty settings
 var t = (prompt("What do ypu want to play to?", 2))-1;//win condition user entered for testing
 class Ball{//to make new balls easy to add more 
     constructor(x,y,dx,dy){ //constructor to start things off and make ball
@@ -9,15 +8,10 @@ class Ball{//to make new balls easy to add more
       this.clr = color(random(255),random(255),random(255));//create random color for the ball
     }
     run(){//use this so you dont have to run all of these for each ball
-      if(h>(-1)){
       this.checkEdges();//bounce ball
       this.update();//move ball
       this.render();//draw ball
       this.paddle();//check if the ball hit the paddle
-      }
-      if(h<0){
-        this.rend();
-      }
       this.win();//check win condition
     }//end run
     checkEdges(){//check if touching edge, if so reverse direction
@@ -33,18 +27,21 @@ class Ball{//to make new balls easy to add more
       if(this.loc.y > height){//up
         this.vel.y = -this.vel.y;//bounce ball
         console.log("bottom");
-        h--;
       }
     }
     paddle(){
       var d = mouseX;//location of paddle x
         if((this.loc.x>=(d-50)&&(d+50)>=this.loc.x)&&((this.loc.y > 490)&&(this.loc.y<510))){//detect paddle hit
-        p++;//incriment score
-        textSize(200);//large score
-        fill(255, 255, 255);//make score text white
-        text(p, 250, 400);//write score
-        this.vel.x = -this.vel.x;//bounce ball
-        this.vel.y = -this.vel.y;
+        // p++;//incriment score
+        // textSize(200);//large score
+        // fill(255, 255, 255);//make score text white
+        // text(p, 250, 400);//write score
+        // this.vel.x = -this.vel.x;//bounce ball
+        // this.vel.y = -this.vel.y;
+        for(var i = balls.length - 1; i >= 0; i--){
+             balls.splice(i, 1)
+       }
+    
       }
     }
     update(){//update location
@@ -62,11 +59,11 @@ class Ball{//to make new balls easy to add more
       }
     }
     render(){//render one frame
+      // fill(255,0,0);//make this color
+      // textSize(10);//make text fit
+      // text(h, this.loc.x, this.loc.y);//write you win
       fill(this.clr);//make this color
       ellipse(this.loc.x, this.loc.y, 10, 10);//render ball, change if you want other shapes
-      background(5,5,5,25);//give slight trail
-    }
-    rend(){
       background(5,5,5,25);//give slight trail
     }
   }
