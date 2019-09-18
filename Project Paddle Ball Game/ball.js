@@ -41,7 +41,7 @@ class Ball{//to make new balls easy to add more
         // this.vel.x = -this.vel.x;//bounce ball
         // this.vel.y = -this.vel.y;
         for(var j = balls.length - 1; j >= 0; j--){
-          balls.splice(j, 1)//use this because you need to read the array so figure it out individual things are refrenced check other folder
+          balls.splice(j,1)//use this because you need to read the array so figure it out individual things are refrenced check other folder
        }
       }
     }
