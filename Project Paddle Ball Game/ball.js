@@ -42,13 +42,11 @@ class Ball{//to make new balls easy to add more
         // this.vel.x = -this.vel.x;//bounce ball
         // this.vel.y = -this.vel.y;
         for(var j = l - 1; j >= 0; j--){//balls.length
-          if(balls[j].isColiding()){
           balls.splice(j,1)//use this because you need to read the array so figure it out individual things are refrenced check other folder
           }
        }
-       console.log(j)
+       console.log(j);
       }
-    }
     update(){//update location
       this.vel.add(this.acc);//gravitay
       this.loc.add(this.vel);//move things
