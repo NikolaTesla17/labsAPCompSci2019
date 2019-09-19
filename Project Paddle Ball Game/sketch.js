@@ -11,7 +11,8 @@ function setup() {
   background(5, 5, 5);//make black background
   fill(200, 30, 150);
   for(x=0;x<z;x++){
-  balls[x] = new Ball(random(width),random(height),random(-5,5),random(-5,5))//make the game ball
+    y=x;
+  balls[x] = new Ball(random(width),random(height),random(-5,5),random(-5,5),y)//make the game ball
   }
   paddle1= new Paddle(300,500);
 }
