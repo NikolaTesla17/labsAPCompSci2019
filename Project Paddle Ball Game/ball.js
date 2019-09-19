@@ -32,17 +32,19 @@ class Ball{//to make new balls easy to add more
     }
     paddle(){
       var d = mouseX;//location of paddle x
+      var l = balls.length;
+      console.log(l);
         if((this.loc.x>=(d-50)&&(d+50)>=this.loc.x)&&((this.loc.y > 490)&&(this.loc.y<510))){//detect paddle hit
-        console.log(j)
           // p++;//incriment score
         // textSize(200);//large score
         // fill(255, 255, 255);//make score text white
         // text(p, 250, 400);//write score
         // this.vel.x = -this.vel.x;//bounce ball
         // this.vel.y = -this.vel.y;
-        for(var j = balls.length - 1; j >= 0; j--){
+        for(var j = l - 1; j >= 0; j--){//balls.length
           balls.splice(j,1)//use this because you need to read the array so figure it out individual things are refrenced check other folder
        }
+       console.log(j)
       }
     }
     update(){//update location
