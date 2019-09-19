@@ -42,7 +42,7 @@ class Ball{//to make new balls easy to add more
         // this.vel.x = -this.vel.x;//bounce ball
         // this.vel.y = -this.vel.y;
         for(var j = l - 1; j >= 0; j--){//balls.length
-          if(balls[j](loc.x>=(d-50)&&(d+50)>=loc.x)){
+          if(balls[j].isColiding()){
           balls.splice(j,1)//use this because you need to read the array so figure it out individual things are refrenced check other folder
           }
        }
@@ -71,4 +71,9 @@ class Ball{//to make new balls easy to add more
       ellipse(this.loc.x, this.loc.y, 10, 10);//render ball, change if you want other shapes
       background(5,5,5,25);//give slight trail
     }
+    // isColiding(){
+    //   var d = mouseX;
+    //   (this.loc.x>=(d-50)&&(d+50)>=this.loc.x)&&((this.loc.y > 490)&&(this.loc.y<510))
+    //   return true;
+    // }
   }
