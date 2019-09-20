@@ -47,6 +47,7 @@ class Ball{//to make new balls easy to add more
         var g=l-(j+1);//iterate backwords with j
         console.log(g);//things are broken because the first ball works butthen the this.id is wrong
           balls.splice(j,1)//use this because you need to read the array so figure it out individual things are refrenced check other folder
+          console.log("kill ball " + j)
           I--;
           console.log("I" + I);
           //}
