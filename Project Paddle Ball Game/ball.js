@@ -43,7 +43,6 @@ class Ball{//to make new balls easy to add more
         // this.vel.x = -this.vel.x;//bounce ball
         // this.vel.y = -this.vel.y;
         //for(var j = l - 1; j >= 0; j--){//balls.length
-        y=j+1;
         var g=l-(j+1);//iterate backwords with j
         console.log(g);
           balls.splice(g,1)//use this because you need to read the array so figure it out individual things are refrenced check other folder

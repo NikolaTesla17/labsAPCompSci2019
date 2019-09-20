@@ -54,9 +54,9 @@ function draw() {
   }
   if(l > 139){
   var u = balls.length-1;
-  for(x=0;x<u;x++){//loop to allow for the creation of multiple balls
+  for(x=0;x<=u;x++){//loop to allow for the creation of multiple balls
   balls[x].run();//runs the ball
-  console.log("balls run")
+  console.log(u);
   }
   paddle1.run();
 }
