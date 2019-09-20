@@ -1,5 +1,5 @@
 var p = 0;//because non global varriables are hard
-var t = (prompt("What do ypu want to play to?", 2))-1;//win condition user entered for testing
+var t = 9;//(prompt("What do ypu want to play to?", 2))-1;//win condition user entered for testing
 
 class Ball{//to make new balls easy to add more 
     constructor(x,y,dx,dy,id){ //constructor to start things off and make ball
@@ -34,7 +34,8 @@ class Ball{//to make new balls easy to add more
     paddle(){
       var d = mouseX;//location of paddle x
       var l = balls.length;
-      var j = this.id;
+      var p = I-l;//I is initial value get diffrence
+      var j = this.id-p;
         if((this.loc.x>=(d-50)&&(d+50)>=this.loc.x)&&((this.loc.y > 490)&&(this.loc.y<510))){//detect paddle hit
           // p++;//incriment score
         // textSize(200);//large score
@@ -44,8 +45,10 @@ class Ball{//to make new balls easy to add more
         // this.vel.y = -this.vel.y;
         //for(var j = l - 1; j >= 0; j--){//balls.length
         var g=l-(j+1);//iterate backwords with j
-        console.log(g);
+        console.log(g);//things are broken because the first ball works butthen the this.id is wrong
           balls.splice(j,1)//use this because you need to read the array so figure it out individual things are refrenced check other folder
+          I--;
+          console.log("I" + I);
           //}
        }
       }
