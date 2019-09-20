@@ -34,7 +34,7 @@ class Ball{//to make new balls easy to add more
     paddle(){
       var d = mouseX;//location of paddle x
       var l = balls.length;
-      var j = this.id-1;
+      var j = this.id;
         if((this.loc.x>=(d-50)&&(d+50)>=this.loc.x)&&((this.loc.y > 490)&&(this.loc.y<510))){//detect paddle hit
           // p++;//incriment score
         // textSize(200);//large score
@@ -45,7 +45,7 @@ class Ball{//to make new balls easy to add more
         //for(var j = l - 1; j >= 0; j--){//balls.length
         var g=l-(j+1);//iterate backwords with j
         console.log(g);
-          balls.splice(g,1)//use this because you need to read the array so figure it out individual things are refrenced check other folder
+          balls.splice(j,1)//use this because you need to read the array so figure it out individual things are refrenced check other folder
           //}
        }
       }
