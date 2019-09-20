@@ -53,7 +53,7 @@ function draw() {
     console.log(l);
   }
   if(l > 139){
-  var u = balls.length;
+  var u = balls.length-1;
   for(x=0;x<u;x++){//loop to allow for the creation of multiple balls
   balls[x].run();//runs the ball
   console.log("balls run")
