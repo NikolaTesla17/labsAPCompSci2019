@@ -6,7 +6,13 @@ class Paddle{
     run(){//use this so you dont have to run all of these for each ball
       fill(this.clr);//make random color
       rectMode(CENTER);//make it so the center moves
-      this.loc.x = mouseX;
+      loc.x = mouseX;
       rect(this.loc.x, this.loc.y, 100, 10);//render paddle to mouse and over at 10
     }//end run function
-}//end the class
+// function keyPressed() {
+//   if (keyCode === LEFT_ARROW) {
+//     this.loc.x = this.loc.x-1
+//   } else if (keyCode === RIGHT_ARROW) {
+//     this.loc.x = this.loc.x+1
+//   }
+}//end of paddle class

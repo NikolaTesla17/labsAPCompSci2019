@@ -13,7 +13,7 @@ class Ball{//to make new balls easy to add more
       this.checkEdges();//bounce ball
       this.update();//move ball
       this.render();//draw ball
-      this.paddle();//check if the ball hit the paddle
+      this.colliding();//check if the ball hit the paddle
       this.win();//check win condition
     }//end run
     checkEdges(){//check if touching edge, if so reverse direction
@@ -31,7 +31,7 @@ class Ball{//to make new balls easy to add more
         console.log("bottom");
       }
     }
-    paddle(){
+    colliding(){
       // var d = mouseX;//location of paddle x
       var l = balls.length-1;
       // var p = I-l;//I is initial value get diffrence
