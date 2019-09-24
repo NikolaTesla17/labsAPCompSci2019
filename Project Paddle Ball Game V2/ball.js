@@ -13,7 +13,7 @@ class Ball{//to make new balls easy to add more
       this.checkEdges();//bounce ball
       this.update();//move ball
       this.render();//draw ball
-      this.colliding();//check if the ball hit the paddle
+      this.remove();//check if the ball hit the paddle
       this.win();//check win condition
     }//end run
     checkEdges(){//check if touching edge, if so reverse direction
@@ -31,11 +31,18 @@ class Ball{//to make new balls easy to add more
         console.log("bottom");
       }
     }
-    colliding(){
+    remove(){
       // var d = mouseX;//location of paddle x
-      var l = balls.length-1;
-      for(var j = l - 1; j >= 0; j--){//balls.length
-        if(balls[j].isColliding()) balls.splice(j,1);
+      // var l = balls.length-1;
+      // for(var j = l - 1; j >= 0; j--){//balls.length
+      //   if(balls[j].isColliding()) balls.splice(j,1);
+      // }
+      //console.log("collison" + balls.length);
+      for (var i = balls.length-1; i >= 0; i--){
+        if (balls[i].isColliding()){
+          balls.splice(i, 1);
+          console.log("ball remove"+i);
+        }
       }
     }
       isColliding(){
@@ -44,6 +51,7 @@ class Ball{//to make new balls easy to add more
         this.loc.y+ 15 > paddle.loc.y &&
         this.loc.y-10 < paddle.loc.y){
           console.log("collision");
+          return true;
           //this.vel.y = -this.vel.y;
           //score=score+1;
       }
