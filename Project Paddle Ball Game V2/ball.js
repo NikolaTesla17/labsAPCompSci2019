@@ -34,29 +34,8 @@ class Ball{//to make new balls easy to add more
     colliding(){
       // var d = mouseX;//location of paddle x
       var l = balls.length-1;
-      // var p = I-l;//I is initial value get diffrence
-      // var j = this.id-p;
-      //   if((this.loc.x>=(d-50)&&(d+50)>=this.loc.x)&&((this.loc.y > 490)&&(this.loc.y<510))){//detect paddle hit
-      //     // p++;//incriment score
-      //   // textSize(200);//large score
-      //   // fill(255, 255, 255);//make score text white
-      //   // text(p, 250, 400);//write score
-      //   // this.vel.x = -this.vel.x;//bounce ball
-      //   // this.vel.y = -this.vel.y;
       for(var j = l - 1; j >= 0; j--){//balls.length
         if(balls[j].isColliding()) balls.splice(j,1);
-      }
-      //   var g=l-(j+1);//iterate backwords with j
-      //   console.log(g);//things are broken because the first ball works butthen the this.id is wrong
-      //     balls.splice(j,1)//use this because you need to read the array so figure it out individual things are refrenced check other folder
-      //     console.log("kill ball " + j)
-      //     I--;
-      //     console.log("I" + I);
-      //     //}
-      //  }
-      // for(var i = balls.length - 1; i >= 0; i--){
-      //   if(balls[i].isColliding()) balls.splice(i,1);
-      // }
       }
       isColliding(){
         if(this.loc.x > Paddle.loc.x &&
