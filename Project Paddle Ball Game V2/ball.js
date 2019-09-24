@@ -37,13 +37,15 @@ class Ball{//to make new balls easy to add more
       for(var j = l - 1; j >= 0; j--){//balls.length
         if(balls[j].isColliding()) balls.splice(j,1);
       }
+    }
       isColliding(){
-        if(this.loc.x > Paddle.loc.x &&
-        this.loc.x < Paddle.loc.x +100 &&
-        this.loc.y+ 15 > Paddle.loc.y &&
-        this.loc.y < Paddle.loc.y + 10){
-          this.vel.y = -this.vel.y;
-          score=score+1;
+        if(this.loc.x > paddle.loc.x-50 &&
+        this.loc.x < paddle.loc.x +50 &&
+        this.loc.y+ 15 > paddle.loc.y &&
+        this.loc.y-10 < paddle.loc.y){
+          console.log("collision");
+          //this.vel.y = -this.vel.y;
+          //score=score+1;
       }
     }
     update(){//update location

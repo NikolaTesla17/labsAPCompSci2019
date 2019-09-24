@@ -15,7 +15,7 @@ function setup() {
     y=x;
   balls[x] = new Ball(random(width),random(height),random(-5,5),random(-5,5),y)//make the game ball
   }
-  paddle1= new Paddle(300,500);
+  paddle = new Paddle(300,500);
 }
 
 function keyPressed() {
@@ -59,6 +59,6 @@ function draw() {
   balls[x].run();//runs the ball
   console.log("run ball " + x);
   }
-  paddle1.run();
+  paddle.run();
 }
 }
