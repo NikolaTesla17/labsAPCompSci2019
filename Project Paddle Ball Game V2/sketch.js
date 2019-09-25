@@ -20,7 +20,6 @@ function setup() {
   restart = new button(300,300," restart",1);
 }
 
-
 function start(){
   easy.run();
   medium.run();
@@ -91,13 +90,9 @@ function draw() {
   }
 
   if(mode=="restart"){
-    //setup();
     mode=="null";
-    var z = 90//prompt("how many balls", 2)
-
 setup();
 start();
-
   }
 
   if(mode=="ready"){
