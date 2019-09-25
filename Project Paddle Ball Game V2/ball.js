@@ -32,12 +32,6 @@ class Ball{//to make new balls easy to add more
       }
     }
     remove(){
-      // var d = mouseX;//location of paddle x
-      // var l = balls.length-1;
-      // for(var j = l - 1; j >= 0; j--){//balls.length
-      //   if(balls[j].isColliding()) balls.splice(j,1);
-      // }
-      //console.log("collison" + balls.length);
       for (var i = balls.length-1; i >= 0; i--){
         if (balls[i].isColliding()){
           balls.splice(i, 1);
@@ -52,8 +46,6 @@ class Ball{//to make new balls easy to add more
         this.loc.y-10 < paddle.loc.y){
           console.log("collision");
           return true;
-          //this.vel.y = -this.vel.y;
-          //score=score+1;
       }
     }
     update(){//update location
@@ -71,16 +63,8 @@ class Ball{//to make new balls easy to add more
       }
     }
     render(){//render one frame
-      // fill(255,0,0);//make this color
-      // textSize(10);//make text fit
-      // text(h, this.loc.x, this.loc.y);//write you win
       fill(this.clr);//make this color
       ellipse(this.loc.x, this.loc.y, 10, 10);//render ball, change if you want other shapes
       background(5,5,5,25);//give slight trail
     }
-    // isColiding(){
-    //   var d = mouseX;
-    //   (this.loc.x>=(d-50)&&(d+50)>=this.loc.x)&&((this.loc.y > 490)&&(this.loc.y<510))
-    //   return true;
-    // }
   }

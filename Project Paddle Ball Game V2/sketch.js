@@ -101,15 +101,13 @@ function draw() {
       console.log("yup");
       mode="restart"
       console.log("restart");
-  }else{
-    console.log("nope");
   }
 }
 
   if(mode=="restart"){
     mode=="null";
-setup();
-start();
+  setup();
+  start();
   }
 
   if(mode=="ready"){
@@ -121,7 +119,5 @@ start();
     if(balls.length==0){
       mode="win";
     }
-
-
   }
 }
