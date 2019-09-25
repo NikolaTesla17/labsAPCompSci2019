@@ -16,6 +16,9 @@ function setup() {
   balls[x] = new Ball(random(width),random(height),random(-5,5),random(-5,5),y)//make the game ball
   }
   paddle = new Paddle(300,500);
+  easy = new button(100,450,"   easy",2);
+  medium = new button(250,450,"medium",3);
+  hard = new button(400,450,"   hard",1);
 }
 
 function keyPressed() {
@@ -25,33 +28,9 @@ function keyPressed() {
 
 function draw() {
   if(l < 30){
-    background(5,5,255);//wipe background make blue
-    var w = "Press Any Button to Start!";//win string
-    textSize(30);//make text fit
-    fill(255, 255, 255);//make win white
-    text(w, 150, 300);//write you win
-    if(t > 1){
-    l++;
-    }
-    console.log(l);
-  }
-  if((l > 29)&&(l<120)){
-    background(5,5,255);//wipe background make blue
-    var w = "Move with your mouse!";//win string
-    textSize(30);//make text fit
-    fill(255, 255, 255);//make win white
-    text(w, 150, 300);//write you win
-    l++;
-    console.log(l);
-  }
-  if((l > 119)&&(l<140)){
-    background(5,5,255);//wipe background make blue
-    var w = "Reach 20 points before you run out";//win string
-    textSize(30);//make text fit
-    fill(255, 255, 255);//make win white
-    text(w, 150, 300);//write you win
-    l++;
-    console.log(l);
+    easy.run();
+    medium.run();
+    hard.run();
   }
   if(l > 139){
     paddle.run();
