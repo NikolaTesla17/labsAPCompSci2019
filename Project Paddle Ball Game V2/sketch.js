@@ -44,6 +44,10 @@ function start(){
   medium.run();
   hard.run();
 
+  textSize(70);//make text fit
+  fill(255,255,255);//make text color
+  text("Paddle Ball", 130, 200);//write you win
+
     if(mouseIsPressed&&mouseX>100&&mouseX<210&&mouseY>395&&mouseY<505){
         difficulty='easy'
         console.log("easy");
