@@ -20,22 +20,6 @@ function setup() {
   restart = new button(300,300," restart",1);
 }
 
-// function keyPressed() {
-//   console.log("key pressed");
-//   t++;
-// }
-// function mousePressed() {
-//   console.log("mouse pressed");
-//   if(MouseX==)
-// }
-// function MouseUse()
-// if(mouseIsPressed&&
-//   mouseX>74&&
-//   mouseX<126&&
-//   mouseY>395&&
-//   mouseY<505){
-//     difficulty='easy'
-//   }
 
 function start(){
   easy.run();
@@ -109,6 +93,13 @@ function draw() {
   if(mode=="restart"){
     //setup();
     mode=="null";
+    var z = 90//prompt("how many balls", 2)
+var balls = [];
+var l = 0;
+var t = 0;
+var I = z;
+setup();
+draw();
   }
 
   if(mode=="ready"){
