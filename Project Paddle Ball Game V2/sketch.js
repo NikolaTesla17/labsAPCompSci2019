@@ -94,11 +94,9 @@ function draw() {
     //setup();
     mode=="null";
     var z = 90//prompt("how many balls", 2)
-var balls = [];
-var l = 0;
-var t = 0;
-var I = z;
+
 setup();
+start();
 
   }
 
