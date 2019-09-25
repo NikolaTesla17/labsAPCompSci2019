@@ -84,7 +84,7 @@ function draw() {
     restart.run();
 
     if(mouseIsPressed&&mouseX>300&&mouseX<410&&mouseY>300&&mouseY<355){
-      mode='restart'
+      mode="restart"
       console.log("restart");
     }
   }
@@ -100,5 +100,22 @@ start();
     for(var i = 0; i < balls.length; i++){
       balls[i].run();
     }
+
+    if(balls.length==0){
+      mode="win";
+    }
+
+  if(mode=="win"){
+    background(5,5,5);
+    textSize(90);//make text fit
+    fill(255,255,255);//make text color
+    text("you win", 130, 200);//write you win
+    restart.run();
+
+    if(mouseIsPressed&&mouseX>300&&mouseX<410&&mouseY>300&&mouseY<355){
+      mode='restart'
+      console.log("restart");
+  }
 }
+  }
 }
