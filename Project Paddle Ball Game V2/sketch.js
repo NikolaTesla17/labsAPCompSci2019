@@ -6,6 +6,7 @@ var balls = [];
 var l = 0;
 var t = 0;
 var I = z;
+var difficulty="null";
 function setup() {
   var ctx = createCanvas(600, 600);//make canvas
   ctx.position((windowWidth-width)/2, 30);//put canvas in the middle
@@ -38,32 +39,30 @@ function setup() {
 //     difficulty='easy'
 //   }
 
-function draw() {
+function start(){
+  easy.run();
+  medium.run();
+  hard.run();
 
-    easy.run();
-    medium.run();
-    hard.run();
-
-    if(mouseIsPressed&&
-      mouseX>100&&
-      mouseX<210&&
-      mouseY>395&&
-      mouseY<505){
+    if(mouseIsPressed&&mouseX>100&&mouseX<210&&mouseY>395&&mouseY<505){
         difficulty='easy'
         console.log("easy");
       }
-      if(mouseIsPressed&&mouseX>250&&
-        mouseX<360&&
-        mouseY>395&&
-        mouseY<505){
-          difficulty='medium'
-          console.log("medium");
-  }
-  if(mouseIsPressed&&mouseX>400&&mouseX<510&&mouseY>395&&mouseY<505){
-            difficulty='hard'
-            console.log("hard");
-          }
+    if(mouseIsPressed&&mouseX>250&&mouseX<360&&mouseY>395&&mouseY<505){
+      difficulty='medium'
+      console.log("medium");
+    }
+    if(mouseIsPressed&&mouseX>400&&mouseX<510&&mouseY>395&&mouseY<505){
+      difficulty='hard'
+      console.log("hard");
+    }
+}
 
+function draw() {
+
+    if(difficulty=="null"){
+      start();
+  }
     // if(mousePressed){
     //   console.log("mouse pressed");
     // }
