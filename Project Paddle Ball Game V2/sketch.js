@@ -99,7 +99,7 @@ var l = 0;
 var t = 0;
 var I = z;
 setup();
-draw();
+
   }
 
   if(mode=="ready"){
