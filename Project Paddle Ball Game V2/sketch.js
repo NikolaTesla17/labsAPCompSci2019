@@ -17,7 +17,7 @@ function setup() {
   medium = new button(250,450,"medium",3);
   hard = new button(400,450,"   hard",1);
   direct = new button(400,50," directions",0);
-  restart = new button(300,300," restart",1);
+  restart = new button(245,300," restart",1);
 }
 
 function start(){
@@ -91,9 +91,9 @@ function draw() {
 
   if(mode=="win"){
     background(5,5,5);
-    textSize(90);//make text fit
+    textSize(70);//make text fit
     fill(255,255,255);//make text color
-    text("you win", 130, 200);//write you win
+    text("  You Win", 130, 200);//write you win
     restart.run();
     console.log("here");
 
