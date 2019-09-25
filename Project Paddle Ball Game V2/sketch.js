@@ -1,7 +1,7 @@
 //  Nayan Smuek
 // 	8/21/19
 //  Project 9/11
-var z = prompt("how many balls", 2)
+var z = 90//prompt("how many balls", 2)
 var balls = [];
 var l = 0;
 var t = 0;
@@ -12,10 +12,6 @@ function setup() {
   ctx.position((windowWidth-width)/2, 30);//put canvas in the middle
   background(5, 5, 5);//make black background
   fill(200, 30, 150);
-  for(x=0;x<z;x++){
-    y=x;
-  balls[x] = new Ball(random(width),random(height),random(-5,5),random(-5,5),y)//make the game ball
-  }
   paddle = new Paddle(300,500);
   easy = new button(100,450,"   easy",2);//55 to y 25 to x
   medium = new button(250,450,"medium",3);
@@ -62,15 +58,27 @@ function start(){
     }
 }
 
+function load(x){
+  for(q=0;q<x;q++){
+  balls[q] = new Ball(random(width),random(height),random(-5,5),random(-5,5),q)//make the game ball
+  }
+}
+
+
 function draw() {
 
     if(difficulty=="null"){
       start();
   }
+
+  if(difficulty=="easy"){
+    load(10);
+  }
+
     // if(mousePressed){
     //   console.log("mouse pressed");
     // }
-  if(l > 139){
+  if(difficulty!="null"){
     paddle.run();
     for(var i = 0; i < balls.length; i++){
       balls[i].run();
