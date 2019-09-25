@@ -6,7 +6,7 @@ var balls = [];
 var l = 0;
 var t = 0;
 var I = z;
-var difficulty="null";
+var mode="null";
 function setup() {
   var ctx = createCanvas(600, 600);//make canvas
   ctx.position((windowWidth-width)/2, 30);//put canvas in the middle
@@ -45,15 +45,15 @@ function start(){
   text("Paddle Ball", 130, 200);//write you win
 
     if(mouseIsPressed&&mouseX>100&&mouseX<210&&mouseY>395&&mouseY<505){
-        difficulty='easy'
+        mode='easy'
         console.log("easy");
       }
     if(mouseIsPressed&&mouseX>250&&mouseX<360&&mouseY>395&&mouseY<505){
-      difficulty='medium'
+      mode='medium'
       console.log("medium");
     }
     if(mouseIsPressed&&mouseX>400&&mouseX<510&&mouseY>395&&mouseY<505){
-      difficulty='hard'
+      mode='hard'
       console.log("hard");
     }
 }
@@ -67,18 +67,16 @@ function load(x){
 
 function draw() {
 
-    if(difficulty=="null"){
+    if(mode=="null"){
       start();
   }
 
-  if(difficulty=="easy"){
+  if(mode=="easy"){
     load(10);
+    mode="ready";
   }
 
-    // if(mousePressed){
-    //   console.log("mouse pressed");
-    // }
-  if(difficulty!="null"){
+  if(mode=="ready"){
     paddle.run();
     for(var i = 0; i < balls.length; i++){
       balls[i].run();
