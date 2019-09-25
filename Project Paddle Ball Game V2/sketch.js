@@ -46,10 +46,9 @@ function start(){
 
 function load(x){
   for(q=0;q<x;q++){
-  balls[q] = new Ball(random(width),random(height),random(-5,5),random(-5,5),q)//make the game ball
+  balls[q] = new Ball(random(width),random(height,300),random(-5,5),random(-5,5),q)//make the game ball
   }
 }
-
 
 function draw() {
 

@@ -1,6 +1,3 @@
-var p = 0;//because non global varriables are hard
-var t = 9;//(prompt("What do ypu want to play to?", 2))-1;//win condition user entered for testing
-
 class Ball{//to make new balls easy to add more 
     constructor(x,y,dx,dy,id){ //constructor to start things off and make ball
       this.loc = createVector(x, y);//create a vector for ball's position
@@ -14,7 +11,6 @@ class Ball{//to make new balls easy to add more
       this.update();//move ball
       this.render();//draw ball
       this.remove();//check if the ball hit the paddle
-      this.win();//check win condition
     }//end run
     checkEdges(){//check if touching edge, if so reverse direction
       if(this.loc.x < 0){//left
@@ -35,7 +31,6 @@ class Ball{//to make new balls easy to add more
       for (var i = balls.length-1; i >= 0; i--){
         if (balls[i].isColliding()){
           balls.splice(i, 1);
-          console.log("ball remove"+i);
         }
       }
     }
@@ -44,23 +39,12 @@ class Ball{//to make new balls easy to add more
         this.loc.x < paddle.loc.x +50 &&
         this.loc.y+ 15 > paddle.loc.y &&
         this.loc.y-10 < paddle.loc.y){
-          console.log("collision");
           return true;
       }
     }
     update(){//update location
       this.vel.add(this.acc);//gravitay
       this.loc.add(this.vel);//move things
-    }
-    win(){//check for win
-      if(p>t){//set win condition
-        background(5,5,255);//wipe background make blue
-        var w = "You Win!";//win string
-        textSize(80);//make text fit
-        fill(255, 255, 255);//make win white
-        text(w, 150, 300);//write you win
-        throw new Error("won");//stop game
-      }
     }
     render(){//render one frame
       fill(this.clr);//make this color
