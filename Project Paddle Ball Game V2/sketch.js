@@ -1,11 +1,7 @@
 //  Nayan Smuek
 // 	8/21/19
 //  Project 9/11
-var z = 90//prompt("how many balls", 2)
 var balls = [];
-var l = 0;
-var t = 0;
-var I = z;
 var mode="null";
 function setup() {
   var ctx = createCanvas(600, 600);//make canvas
