@@ -21,21 +21,37 @@ function setup() {
   hard = new button(400,450,"   hard",1);
 }
 
-function keyPressed() {
-  console.log("key pressed");
-  t++;
-}
+// function keyPressed() {
+//   console.log("key pressed");
+//   t++;
+// }
+// function mousePressed() {
+//   console.log("mouse pressed");
+//   if(MouseX==)
+// }
+function MouseUse()
+if(mouseIsPressed&&
+  mouseX>300&&
+  mouseX<500&&
+  mouseY>600&&
+  mouseY<700){
+    difficulty='medium'
+  }
 
 function draw() {
   if(l < 30){
     easy.run();
     medium.run();
     hard.run();
+
+    // if(mousePressed){
+    //   console.log("mouse pressed");
+    // }
   }
   if(l > 139){
     paddle.run();
     for(var i = 0; i < balls.length; i++){
-        balls[i].run();
+      balls[i].run();
     }
 }
 }
