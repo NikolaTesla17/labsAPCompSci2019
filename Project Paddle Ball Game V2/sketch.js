@@ -16,7 +16,7 @@ function setup() {
   balls[x] = new Ball(random(width),random(height),random(-5,5),random(-5,5),y)//make the game ball
   }
   paddle = new Paddle(300,500);
-  easy = new button(100,450,"   easy",2);
+  easy = new button(100,450,"   easy",2);//55 to y 25 to x
   medium = new button(250,450,"medium",3);
   hard = new button(400,450,"   hard",1);
 }
@@ -29,25 +29,44 @@ function setup() {
 //   console.log("mouse pressed");
 //   if(MouseX==)
 // }
-function MouseUse()
-if(mouseIsPressed&&
-  mouseX>300&&
-  mouseX<500&&
-  mouseY>600&&
-  mouseY<700){
-    difficulty='medium'
-  }
+// function MouseUse()
+// if(mouseIsPressed&&
+//   mouseX>74&&
+//   mouseX<126&&
+//   mouseY>395&&
+//   mouseY<505){
+//     difficulty='easy'
+//   }
 
 function draw() {
-  if(l < 30){
+
     easy.run();
     medium.run();
     hard.run();
 
+    if(mouseIsPressed&&
+      mouseX>100&&
+      mouseX<210&&
+      mouseY>395&&
+      mouseY<505){
+        difficulty='easy'
+        console.log("easy");
+      }
+      if(mouseIsPressed&&mouseX>250&&
+        mouseX<360&&
+        mouseY>395&&
+        mouseY<505){
+          difficulty='medium'
+          console.log("medium");
+  }
+  if(mouseIsPressed&&mouseX>400&&mouseX<510&&mouseY>395&&mouseY<505){
+            difficulty='hard'
+            console.log("hard");
+          }
+
     // if(mousePressed){
     //   console.log("mouse pressed");
     // }
-  }
   if(l > 139){
     paddle.run();
     for(var i = 0; i < balls.length; i++){
