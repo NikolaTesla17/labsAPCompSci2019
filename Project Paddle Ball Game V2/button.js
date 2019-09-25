@@ -16,11 +16,12 @@ class button{
       this.text = text;
     }//end the constructor
     run(){//use this so you dont have to run all of these
+      rectMode(CORNER);
       fill(this.clr);//make color
       if(this.id>0){
       rect(this.loc.x, this.loc.y, 110, 50);//render paddle to mouse and over at 10
       }
-      if(this.id==0){
+      if(this.id==0){//if it is the restart button
         rect(this.loc.x, this.loc.y, 150, 50);
       }
       textSize(30);//make text fit

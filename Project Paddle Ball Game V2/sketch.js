@@ -89,6 +89,23 @@ function draw() {
     }
   }
 
+  if(mode=="win"){
+    background(5,5,5);
+    textSize(90);//make text fit
+    fill(255,255,255);//make text color
+    text("you win", 130, 200);//write you win
+    restart.run();
+    console.log("here");
+
+    if(mouseIsPressed&&mouseX>300&&mouseX<410&&mouseY>300&&mouseY<355){
+      console.log("yup");
+      mode="restart"
+      console.log("restart");
+  }else{
+    console.log("nope");
+  }
+}
+
   if(mode=="restart"){
     mode=="null";
 setup();
@@ -105,17 +122,6 @@ start();
       mode="win";
     }
 
-  if(mode=="win"){
-    background(5,5,5);
-    textSize(90);//make text fit
-    fill(255,255,255);//make text color
-    text("you win", 130, 200);//write you win
-    restart.run();
 
-    if(mouseIsPressed&&mouseX>300&&mouseX<410&&mouseY>300&&mouseY<355){
-      mode='restart'
-      console.log("restart");
-  }
-}
   }
 }
