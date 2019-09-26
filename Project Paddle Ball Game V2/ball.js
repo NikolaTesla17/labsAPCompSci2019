@@ -31,6 +31,9 @@ class Ball{//to make new balls easy to add more
       for (var i = balls.length-1; i >= 0; i--){
         if (balls[i].isColliding()){
           balls.splice(i, 1);
+          if(this.vel.y<1){
+            mode = "lose";
+          }
         }
       }
     }

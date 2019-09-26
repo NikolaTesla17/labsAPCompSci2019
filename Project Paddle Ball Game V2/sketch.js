@@ -93,10 +93,23 @@ function draw() {
     console.log("here");
 
     if(mouseIsPressed&&mouseX>300&&mouseX<410&&mouseY>300&&mouseY<355){
-      console.log("yup");
       mode="restart"
       console.log("restart");
   }
+}
+
+if(mode=="lose"){
+  background(5,5,5);
+  textSize(70);//make text fit
+  fill(255,255,255);//make text color
+  text(" You Lose", 130, 200);//write you win
+  restart.run();
+  console.log("here");
+
+  if(mouseIsPressed&&mouseX>300&&mouseX<410&&mouseY>300&&mouseY<355){
+    mode="restart"
+    console.log("restart");
+}
 }
 
   if(mode=="restart"){
