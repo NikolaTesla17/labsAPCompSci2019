@@ -75,7 +75,7 @@ function draw() {
     background(5,5,5);
     textSize(20);//make text fit
     fill(255,255,255);//make text color
-    text("Hit all of the balls", 130, 200);//write you win
+    text("Hit all of the balls, \nDon't let them hit the back of the \npaddle", 130, 200);//write you win
     restart.run();
 
     if(mouseIsPressed&&mouseX>300&&mouseX<410&&mouseY>300&&mouseY<355){
