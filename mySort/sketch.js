@@ -8,14 +8,18 @@ function setup() {
   // background(5, 5, 5);
   // fill(200, 30, 150);
   var list = [3,6,1,8,2,9];
-  console.log("original: " + nums);
+  console.log("original: " + list);
 
   var x=list.length+1;
-  var a = "null"
-  for(y=1;y=<x;x++){
-
-
-
+  // var tmp;
+  for(y=1;y<=x;x++){
+    if(list[y]>list[y-1]){
+      console.log("done: " + list);
+    }else{
+      tmp = list[y-1];
+      list[y-1]=list[y];
+      list[y]=tmp;
+    }
   }
 
 
