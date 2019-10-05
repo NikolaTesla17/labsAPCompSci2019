@@ -19,6 +19,7 @@ function setup() {
       tmp = list[y-1];
       list[y-1]=list[y];
       list[y]=tmp;
+      console.log("test");
     }
   }
 
