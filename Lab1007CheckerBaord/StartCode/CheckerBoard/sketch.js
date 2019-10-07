@@ -31,7 +31,7 @@ function setup() {
 
 function loadSquares(){
   for(q=0;q<4;q++){//loop to create enough balls
-  squares[q] = new square((100+(q*100)),100,1);
+  squares[q] = new square((100+(q*100)),50,1);
   }
   //  create a square object and push it into the squares array
 
