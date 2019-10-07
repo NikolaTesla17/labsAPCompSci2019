@@ -30,8 +30,21 @@ function setup() {
 
 
 function loadSquares(){
-  for(q=0;q<4;q++){//loop to create enough balls
-  squares[q] = new square((100+(q*100)),50,1);
+  for(q=0;q<16;q++){//loop to create enough balls
+    if (q%2 == 0){
+      cl = 1;
+    } else {
+      cl = 2;
+    }
+    
+    if(q<=8){
+      y = 0;
+    }
+    if(8<q<=16){
+      y = 100;
+    }
+
+  squares[q] = new square(q*100,y,cl);
   }
   //  create a square object and push it into the squares array
 
