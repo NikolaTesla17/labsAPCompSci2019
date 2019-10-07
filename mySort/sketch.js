@@ -7,21 +7,43 @@ function setup() {
   // cnv.position((windowWidth-width)/2, 30);
   // background(5, 5, 5);
   // fill(200, 30, 150);
-  var list = [3,6,1,8,2,9];
+  var list = [3,6,10,8,2,9,5,1];
+  iteration = 0;
   console.log("original: " + list);
+sorting = true;
+while (sorting == true){
+   for (let x=0;x<list.length-1;x++){
+      if (list[x] > list[x+1]){
+          var temp = list[x];
+          list[x] = list[x + 1];
+          list[x+1] = temp;
+          sorting = true;
+          }
+   }
 
-  var x=list.length+1;
-  // var tmp;
-  for(y=1;y<=x;x++){
-    if(list[y]>list[y-1]){
-      console.log("done: " + list);
-    }else{
-      tmp = list[y-1];
-      list[y-1]=list[y];
-      list[y]=tmp;
-      console.log("test");
-    }
-  }
+   if (sorting == false){
+    console.log("me run")
+       break;
+   }
+
+   sorting = false;
+if (sorting == false){
+  console.log("sorting now false")
+}
+
+   for (let j=list.length-1;j > 0;j--){
+           if (list[j-1] > list[j]){
+               let temp = list[j];
+               list[j] = list[j - 1];
+               list[j - 1] = temp;
+               sorting = true;
+            }
+   }
+   iteration++;
+   console.log("iteration: " + iteration + "\n arrary: " + list);
+}
+
+console.log("done: " + list);
 
 
 
