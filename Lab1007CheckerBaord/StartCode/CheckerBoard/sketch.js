@@ -21,8 +21,8 @@ function setup() {
   loadSquares();
   //  traverse array and run each square
 
-
-  for(var i = 0; i < squares.length; i++){
+var p = squares.length+1;
+  for(var i = 1; i < 17; i++){
     squares[i].render();
    }
 }
@@ -30,27 +30,28 @@ function setup() {
 
 
 function loadSquares(){
-  for(q=0;q<16;q++){//loop to create enough balls
+  for(q=1;q<17;q++){//loop to create enough balls
     if (q%2 == 0){
       cl = 1;
     } else {
       cl = 2;
     }
     
-    if(q<=8){
+    if(q<=9){
       y = 0;
-      console.log("0");   
-    }
-    if(8<q<=16){
-      y = 100;
-      console.log("100");  
+      console.log("0");
+      squares[q] = new square(q*100-100,y,cl);   
+    } else if(9<=q<17){
+        y = 100;
+        console.log("100");
+        squares[q] = new square(((q-9)*100)-100,y,cl);   
+      }
     }
 
-  squares[q] = new square(q*100,y,cl);
+
   }
   //  create a square object and push it into the squares array
 
   //  create a loop that will push 64 squares into an array
   //  calculate the x and y position interms of the loop control variable
 
-}
