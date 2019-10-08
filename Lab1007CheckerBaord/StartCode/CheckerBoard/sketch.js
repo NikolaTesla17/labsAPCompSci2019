@@ -35,6 +35,9 @@ function loadSquares(){
       cl = 2;
     }
     
+
+    //add a balls.length-9* which if statment it is that plus a few other things will make code loopable
+    
     r=q;
     if(q<=8){
       console.log("0");
