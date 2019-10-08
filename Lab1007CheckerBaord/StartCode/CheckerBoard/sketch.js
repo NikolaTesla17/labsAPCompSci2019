@@ -22,29 +22,37 @@ function setup() {
   //  traverse array and run each square
 
 var p = squares.length+1;
-  for(var i = 1; i < 17; i++){
+  for(var i = 0; i < squares.length; i++){
     squares[i].render();
    }
 }
 
-
-
 function loadSquares(){
-  for(q=1;q<17;q++){//loop to create enough balls
+  for(q=0;q<26;q++){//loop to create enough balls
     if (q%2 == 0){
       cl = 1;
     } else {
       cl = 2;
     }
     
-    if(q<=9){
-      y = 0;
+
+    switch (q){
+      case(2<q<4): console.log("done");
+      break;
+    }
+
+
+    if(q<=8){
       console.log("0");
-      squares[q] = new square(q*100-100,y,cl);   
-    } else if(9<=q<17){
-        y = 100;
+      squares[q] = new square(q*100,0,cl);   
+    } 
+    else if(9<=q<17){
         console.log("100");
-        squares[q] = new square(((q-9)*100)-100,y,cl);   
+        squares[q] = new square(((q-9)*100),100,cl);   
+      }
+      else if(17<=q<25){
+        console.log("200");
+        squares[q] = new square(((q-18)*100),200,cl);   
       }
     }
 
