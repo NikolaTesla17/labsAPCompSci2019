@@ -39,9 +39,11 @@ function loadSquares(){
     
     if(q<=8){
       y = 0;
+      console.log("0");   
     }
     if(8<q<=16){
       y = 100;
+      console.log("100");  
     }
 
   squares[q] = new square(q*100,y,cl);

@@ -1,7 +1,6 @@
 class square{
   constructor(x,y,cl){//find where to make paddle
-    var xval = x;
-    var yval = y;
+    this.loc = createVector(x, y);
     if(cl == 1){
     this.clr = color(255,192,203);//pink
     }
@@ -11,6 +10,6 @@ class square{
   }//end the constructor
   render(){//use this so you dont have to run all of these for each ball
     fill(this.clr);//make random color
-    rect(xval, yval, 100, 100);//render paddle to mouse and over at 10
+    rect(this.loc.x, this.loc.y, 100, 100);//render paddle to mouse and over at 10
   }//end run function
 }//end of paddle class
