@@ -55,14 +55,15 @@ function loadSquares(){
       console.log("0");
       squares[q] = new square(r*100,0,cl);   
     } else{
-        if(q<16){
+        if(q<=16){
         console.log("100");
         squares[q] = new square(((r-9)*100),100,cl);   
-      }
+      }else{
       if(17<=q<25){
         console.log("200");
         squares[q] = new square(((r-18)*100),200,cl);   
       }
+    }
       }
     }
     }
