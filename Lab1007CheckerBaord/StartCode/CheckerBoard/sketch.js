@@ -28,7 +28,7 @@ var p = squares.length+1;
 }
 
 function loadSquares(){
-  for(q=0;q<44;q++){//loop to create enough balls
+  for(q=0;q<71;q++){//loop to create enough balls
     if (q%2 == 0){
       cl = 1;
     } else {
@@ -55,7 +55,23 @@ function loadSquares(){
         if(q<=43){
           console.log("400");
           squares[q] = new square(((r-36)*100),400,cl);   
+      } else{
+        if(q<=52){
+          console.log("500");
+          squares[q] = new square(((r-45)*100),500,cl);   
       } 
+      else{
+        if(q<=61){
+          console.log("600");
+          squares[q] = new square(((r-54)*100),600,cl);   
+      } else{
+        if(q<=70){
+          console.log("700");
+          squares[q] = new square(((r-63)*100),700,cl);   
+      } 
+    }
+    }
+    }
     }
     }
       }
