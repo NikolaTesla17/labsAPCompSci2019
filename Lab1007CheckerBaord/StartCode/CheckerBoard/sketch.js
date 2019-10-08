@@ -36,25 +36,34 @@ function loadSquares(){
     }
     
 
-    switch (q){
-      case(2<q<4): console.log("done");
-      break;
-    }
-
-
-    if(q<=8){
+    switch (q<=8){
+      case(2<q<4):       
       console.log("0");
-      squares[q] = new square(q*100,0,cl);   
-    } 
-    else if(9<=q<17){
-        console.log("100");
-        squares[q] = new square(((q-9)*100),100,cl);   
-      }
-      else if(17<=q<25){
-        console.log("200");
-        squares[q] = new square(((q-18)*100),200,cl);   
+      squares[q] = new square(q*100,0,cl); 
+      break;
+
+      case(9<=q<17): 
+      console.log("100");
+      squares[q] = new square(((q-9)*100),100,cl);
+      break;
+
       }
     }
+
+
+    // if(q<=8){
+    //   console.log("0");
+    //   squares[q] = new square(q*100,0,cl);   
+    // } 
+    // else if(9<=q<17){
+    //     console.log("100");
+    //     squares[q] = new square(((q-9)*100),100,cl);   
+    //   }
+    //   else if(17<=q<25){
+    //     console.log("200");
+    //     squares[q] = new square(((q-18)*100),200,cl);   
+    //   }
+    // }
 
 
   }
