@@ -50,25 +50,25 @@ function loadSquares(){
     //   }
     // }
 
-
+    r=q;
     if(q<=8){
       console.log("0");
-      squares[q] = new square(q*100,0,cl);   
-    } 
-    else if(9<=q<17){
+      squares[q] = new square(r*100,0,cl);   
+    } else{
+        if(q<16){
         console.log("100");
-        squares[q] = new square(((q-9)*100),100,cl);   
+        squares[q] = new square(((r-9)*100),100,cl);   
       }
-      else{
-         if(17<=q<25){
+      if(17<=q<25){
         console.log("200");
-        squares[q] = new square(((q-18)*100),200,cl);   
+        squares[q] = new square(((r-18)*100),200,cl);   
+      }
       }
     }
     }
 
 
-  }
+
   //  create a square object and push it into the squares array
 
   //  create a loop that will push 64 squares into an array
