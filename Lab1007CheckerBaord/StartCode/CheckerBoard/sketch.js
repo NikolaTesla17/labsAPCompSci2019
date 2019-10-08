@@ -28,28 +28,13 @@ var p = squares.length+1;
 }
 
 function loadSquares(){
-  for(q=0;q<26;q++){//loop to create enough balls
+  for(q=0;q<44;q++){//loop to create enough balls
     if (q%2 == 0){
       cl = 1;
     } else {
       cl = 2;
     }
     
-
-    // switch (q<=8){
-    //   case(q<=8):       
-    //   console.log("0");
-    //   squares[q] = new square(q*100,0,cl); 
-    //   break;
-
-    //   case(9<=q<17): 
-    //   console.log("100");
-    //   squares[q] = new square(((q-9)*100),100,cl);
-    //   break;
-
-    //   }
-    // }
-
     r=q;
     if(q<=8){
       console.log("0");
@@ -59,14 +44,25 @@ function loadSquares(){
         console.log("100");
         squares[q] = new square(((r-9)*100),100,cl);   
       }else{
-      if(17<=q<25){
+      if(q<=25){
         console.log("200");
         squares[q] = new square(((r-18)*100),200,cl);   
-      }
+      } else{
+        if(q<=34){
+          console.log("300");
+          squares[q] = new square(((r-27)*100),300,cl);   
+      } else{
+        if(q<=43){
+          console.log("400");
+          squares[q] = new square(((r-36)*100),400,cl);   
+      } 
+    }
     }
       }
+      }
+      }
     }
-    }
+    
 
 
 
