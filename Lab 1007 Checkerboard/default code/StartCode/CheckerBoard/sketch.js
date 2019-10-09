@@ -19,33 +19,32 @@ function loadSquares(){
     } else {
       cl = 2;
     }
-    r=q;
 
     switch(true){
 
-    case(r<=8): squares[q] = new square(r*100,0,cl);
+    case(q<=8): squares[q] = new square(q*100,0,cl);
     break;
 
-    case(q<=16):squares[q] = new square(((r-9)*100),100,cl);   
+    case(q<=16):squares[q] = new square(((q-9)*100),100,cl);   
     break;
 
-    case(q<=25):squares[q] = new square(((r-18)*100),200,cl); 
+    case(q<=25):squares[q] = new square(((q-18)*100),200,cl); 
     break; 
       
       
-    case(q<=34):squares[q] = new square(((r-27)*100),300,cl); 
+    case(q<=34):squares[q] = new square(((q-27)*100),300,cl); 
     break;
 
-    case(q<=43):squares[q] = new square(((r-36)*100),400,cl);
+    case(q<=43):squares[q] = new square(((q-36)*100),400,cl);
     break;
 
-    case(q<=52):squares[q] = new square(((r-45)*100),500,cl);
+    case(q<=52):squares[q] = new square(((q-45)*100),500,cl);
     break;
 
-    case(q<=61):squares[q] = new square(((r-54)*100),600,cl); 
+    case(q<=61):squares[q] = new square(((q-54)*100),600,cl); 
     break;
 
-    case(q<=70):squares[q] = new square(((r-63)*100),700,cl);
+    case(q<=70):squares[q] = new square(((q-63)*100),700,cl);
     break;
     }
   }
