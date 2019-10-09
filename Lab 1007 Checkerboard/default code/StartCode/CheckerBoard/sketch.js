@@ -6,7 +6,6 @@ function setup() {
   background(235);
   loadSquares();
 
-var p = squares.length+1;
   for(var i = 0; i < squares.length; i++){
     squares[i].render();
    }
