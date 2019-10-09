@@ -7,7 +7,7 @@ function setup() {
   // cnv.position((windowWidth-width)/2, 30);
   // background(5, 5, 5);
   // fill(200, 30, 150);
-  var list = [3,6,10,8,2,9,5,1];
+  var list = [3,6,10,11,8,2,9,5,1];
   iteration = 0;
   console.log("original: " + list);
 sorting = true;
