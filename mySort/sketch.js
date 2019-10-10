@@ -21,9 +21,14 @@ while (sorting == true){//if you need to sort then
          temp = list[j];//swap
          list[j] = list[j - 1];//swap
          list[j - 1] = temp;//swap
-         sorting = true;//sorting still needed
       }//end swap
    }//stop iterating backwards
+
+   for (let j=list.length-1;j > 0;j--){//iterate backwards
+      if (list[j-1] > list[j]){//if number is to far up
+         sorting = true;//sorting still needed
+      }//this is needed so the sort dosn't end up doing a whole extra iteration sometimes
+   }//stop iterating
    iteration++;//say you did one loop
    console.log("iteration: " + iteration + "\n arrary: " + list);//print out list at iteration to show change
 }//if sorting isnt true
