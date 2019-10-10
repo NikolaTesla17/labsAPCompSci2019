@@ -14,7 +14,7 @@ while (sorting == true){//if you need to sort then
       }//end swap
    }//stop iterating foward
 
-  sorting = false;//no more sorting needed
+  sorting = false;//no more sorting needed however the rest of the statment still finishes unless the itterate backwards loop sets it back to true because stuff is still out of order
 
    for (let j=list.length-1;j > 0;j--){//iterate backwards
          if (list[j-1] > list[j]){//if number is to far up
