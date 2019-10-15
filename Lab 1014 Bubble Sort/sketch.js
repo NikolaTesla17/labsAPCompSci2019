@@ -4,6 +4,8 @@ function setup() {
   iteration = 0;//to count how long it takes to sort
   console.log("original: " + list);//put list pre sorted
 sorting = true;//you need to sort
+
+// sorting = false;//no more sorting needed however the rest of the statment still finishes unless the itterate backwards loop sets it back to true because stuff is still out of order
 while (sorting == true){//if you need to sort then
    for (let x=0;x<list.length-1;x++){//while there is things to sort iterate up
       if (list[x] > list[x+1]){//check if a number is to far down
@@ -11,18 +13,9 @@ while (sorting == true){//if you need to sort then
          list[x] = list[x + 1];//swap numbers
          list[x+1] = temp;//swap numbers
          sorting = true;//you still need to sort 
-      }//end swap
+      }else{
+      sorting = false;}//end swap
    }//stop iterating foward
-
-  sorting = false;//no more sorting needed however the rest of the statment still finishes unless the itterate backwards loop sets it back to true because stuff is still out of order
-
-   for (let j=list.length-1;j > 0;j--){//iterate backwards
-         if (list[j-1] > list[j]){//if number is to far up
-         temp = list[j];//swap
-         list[j] = list[j - 1];//swap
-         list[j - 1] = temp;//swap
-      }//end swap
-   }//stop iterating backwards
 
    for (let j=list.length-1;j > 0;j--){//iterate backwards
       if (list[j-1] > list[j]){//if number is to far up
