@@ -30,8 +30,7 @@ shuf(bars);
 //  The draw function is called @ 30 fps
 function draw() {
 
-var sort = bars;
-console.log(sort);
+console.log(bars[x].id);
 sortin();
 drw();
 

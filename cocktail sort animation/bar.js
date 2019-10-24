@@ -4,6 +4,11 @@ class bar{//to make new bars easy to add more
         this.x = locX;
         this.id = id;
     }
+
+    size;
+    locX;
+    id;
+
     run(){
         this.x = ((50*this.id));
 
