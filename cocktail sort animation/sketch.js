@@ -5,25 +5,35 @@ function setup() {
    background(5, 5, 5);//make black background
    fill(200, 30, 150);
    frameRate(4);
-  var list = [3,6,10,11,12,8,2,9,5,1,4];//to be sorted
-  iteration = 0;//to count how long it takes to sort
-  console.log("original: " + list);//put list pre sorted
-  for(x=0;x<10;x++){
-   var move = 50*x;
-   bars[x] = new bar((100+move),(100+move))//make the game ball
-   }
+
 }//end setup
+
+
+
+iteration = 0;//to count how long it takes to sort
+for(x=0;x<10;x++){
+ var bars = [1,2,3,4,5,6,7,8,9,10];
+ console.log(bars[2]);
+ }
+
+
+ for(x=0;x<10;x++){
+    
+    var move = 50*x;
+    bars[x] = new bar((100+move),(100+move))
+    }
+ console.log(bars[2]);
+shuf(bars);
+console.log(bars);
+console.log(bars[2]);
 
 //  The draw function is called @ 30 fps
 function draw() {
 
 
-   for(x=0;x<10;x++){//loop to allow for the creation of multiple balls
-      bars[x].run();//runs the ball
+   for(x=0;x<10;x++){
+      bars[x].run();
    }
-
-bar1.run();
-bar2.run();
 }
 
 function bars() {
@@ -61,4 +71,22 @@ while (sorting == true){//if you need to sort then
 
 }//if sorting isnt true
 console.log("done: " + list);//say finished and print array
+}
+
+
+
+
+
+
+
+function shuf(a) {
+   var j, x, i;
+   for (i = a.length - 1; i > 0; i--) {
+       j = Math.floor(Math.random() * (i + 1));
+       x = a[i];
+       a[i] = a[j];
+       a[j] = x;
+   }
+   console.log(a[2]);
+   return a;
 }
