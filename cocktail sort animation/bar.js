@@ -5,15 +5,11 @@ class bar{//to make new bars easy to add more
         this.id = id;
     }
 
-    size;
-    locX;
-    id;
-
     run(){
         this.x = ((50*this.id));
 
         fill(255,0,0);//make red
         rectMode(CENTER);
-        rect(this.x, 500, 40, this.height);
+        rect((this.x+50)-50, 500, 40, this.height);
     }
     }

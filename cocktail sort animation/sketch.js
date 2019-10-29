@@ -21,7 +21,7 @@ for(x=0;x<10;x++){
     
     var move = 50*x;
     //bars[x] = new bar((100+move),(100+move)) //I need to make it so th bars dont have a preordained location
-    bars[x] = new bar((100+move),(50*rand[x]),rand[x])
+    bars[x] = new bar((100+move),(50*rand[x]),rand[x]);
     }
 
 
@@ -30,21 +30,30 @@ shuf(bars);
 //  The draw function is called @ 30 fps
 function draw() {
 
-console.log(bars[x].id);
+   drw();
 sortin();
-drw();
+//sortin();
 
 }
+
+
+// function sot() {
+//    console.log(bars);
+//    bars.sort(function (a, b) {
+//       drw();
+//       return a.height - b.height;
+//     });
+// }
 
 function sortin() {
    sorting = true;//you need to sort
 while (sorting == true){//if you need to sort then
 //possible to draw stuff here
    for (let x=0;x<bars.length-1;x++){//while there is things to sort iterate up
-      if (bars[x] > bars[x+1]){//check if a number is to far down
-         temp = bars[x];//if yes than swap
-         bars[x] = bars[x + 1];//swap numbers
-         bars[x+1] = temp;//swap numbers
+      if (bars[x].height > bars[x+1].height){//check if a number is to far down
+         temp = bars[x].height;//if yes than swap
+         bars[x].height = bars[x + 1].height;//swap numbers
+         bars[x+1].height = temp;//swap numbers
          console.log("drw");
          drw();
          sorting = true;//you still need to sort 
@@ -54,20 +63,20 @@ while (sorting == true){//if you need to sort then
   sorting = false;//no more sorting needed however the rest of the statment still finishes unless the itterate backwards loop sets it back to true because stuff is still out of order
 
    for (let j=bars.length-1;j > 0;j--){//iterate backwards
-         if (bars[j-1] > bars[j]){//if number is to far up
-         temp = bars[j];//swap
-         bars[j] = bars[j - 1];//swap
-         bars[j - 1] = temp;//swap
+         if (bars[j-1].height > bars[j].height){//if number is to far up
+         temp = bars[j].height;//swap
+         bars[j].height = bars[j - 1].height;//swap
+         bars[j - 1].height = temp;//swap
          drw();
       }//end swap
    }//stop iterating backwards
 
    for (let j=bars.length-1;j > 0;j--){//iterate backwards
-      if (bars[j-1] > bars[j]){//if number is to far up
+      if (bars[j-1].height > bars[j].height){//if number is to far up
          sorting = true;//sorting still needed
       }//this is needed so the sort dosn't end up doing a whole extra iteration sometimes
    }//stop iterating
-   iteration++;//say you did one loop
+   console.log(bars);
 }//if sorting isnt true
 }
 
