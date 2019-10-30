@@ -4,7 +4,7 @@ function setup() {
    ctx.position((windowWidth-width)/2, 30);//put canvas in the middle
    background(5, 5, 5);//make black background
    fill(200, 30, 150);
-   frameRate(2);
+   frameRate(1);
 
 }//end setup
 
@@ -54,10 +54,11 @@ while (sorting == true){//if you need to sort then
          temp = bars[x].height;//if yes than swap
          bars[x].height = bars[x + 1].height;//swap numbers
          bars[x+1].height = temp;//swap numbers
-         console.log("drw");
-         drw();
+         // console.log("drw");
+         // drw();
          sorting = true;//you still need to sort 
       }//end swap
+      drw();
    }//stop iterating foward
 
   sorting = false;//no more sorting needed however the rest of the statment still finishes unless the itterate backwards loop sets it back to true because stuff is still out of order
