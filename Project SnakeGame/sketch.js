@@ -8,10 +8,10 @@ function setup() {
   background(5, 5, 5);
   fill(200, 30, 150);
 
-
+  food = new food();
 }
 
 //  The draw function is called @ 30 fps
 function draw() {
-
+ food.run();
 }
