@@ -8,8 +8,11 @@ class bar{//to make new bars easy to add more
     run(){
         // this.x = ((50*this.id));
 
+        this.xy = (this.id*50);
+
         fill(255,0,0);//make red
         rectMode(CENTER);
-        rect(this.xl, 500, 40, this.height);
+        fill(40*this.id,0,255);
+        rect(this.xy, 500, 40, 600);
     }
     }

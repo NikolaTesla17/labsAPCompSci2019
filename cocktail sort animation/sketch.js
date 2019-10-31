@@ -26,11 +26,14 @@ for(x=0;x<10;x++){
 
 
 shuf(bars);
+console.log("first" + bars);
 
 //  The draw function is called @ 30 fps
 function draw() {
 
    drw();
+   console.log("bars");
+   console.log(bars);
 sortin();
 //sortin();
 
@@ -50,10 +53,10 @@ function sortin() {
 while (sorting == true){//if you need to sort then
 //possible to draw stuff here
    for (let x=0;x<bars.length-1;x++){//while there is things to sort iterate up
-      if (bars[x].height > bars[x+1].height){//check if a number is to far down
-         temp = bars[x].height;//if yes than swap
-         bars[x].height = bars[x + 1].height;//swap numbers
-         bars[x+1].height = temp;//swap numbers
+      if (bars[x].xl > bars[x+1].xl){//check if a number is to far down
+         temp = bars[x].xl;//if yes than swap
+         bars[x].xl = bars[x + 1].xl;//swap numbers
+         bars[x+1].xl = temp;//swap numbers
          // console.log("drw");
          // drw();
          sorting = true;//you still need to sort 
@@ -64,18 +67,20 @@ while (sorting == true){//if you need to sort then
   sorting = false;//no more sorting needed however the rest of the statment still finishes unless the itterate backwards loop sets it back to true because stuff is still out of order
 
    for (let j=bars.length-1;j > 0;j--){//iterate backwards
-         if (bars[j-1].height > bars[j].height){//if number is to far up
-         temp = bars[j].height;//swap
-         bars[j].height = bars[j - 1].height;//swap
-         bars[j - 1].height = temp;//swap
-         drw();
+         if (bars[j-1].xl > bars[j].xl){//if number is to far up
+         temp = bars[j].xl;//swap
+         bars[j].xl = bars[j - 1].xl;//swap
+         bars[j - 1].xl = temp;//swap
+
       }//end swap
+      drw();
    }//stop iterating backwards
 
    for (let j=bars.length-1;j > 0;j--){//iterate backwards
-      if (bars[j-1].height > bars[j].height){//if number is to far up
+      if (bars[j-1].xl > bars[j].xl){//if number is to far up
          sorting = true;//sorting still needed
       }//this is needed so the sort dosn't end up doing a whole extra iteration sometimes
+      drw();
    }//stop iterating
    console.log(bars);
 }//if sorting isnt true
