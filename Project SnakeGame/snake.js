@@ -50,7 +50,7 @@ segment(){
     // }
     for(var x=1;x<this.seg;x++){
         fill(255,100,0);//make random color
-        rect(this.lastx,this.lasty, 20, 20);
+        rect(this.lastx+((x-1)*20),this.lasty, 20, 20);
     }
 }
 render(){
