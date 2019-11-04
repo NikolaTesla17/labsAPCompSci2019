@@ -8,7 +8,7 @@ function setup() {
   background(5, 5, 5);
   fill(200, 30, 150);
   frameRate(8);
-
+  var sege =[];
   food = new food();
   snake = new snake();
 }

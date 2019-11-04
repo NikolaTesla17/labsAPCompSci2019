@@ -6,10 +6,13 @@ class snake{
         this.lastx;
         this.lasty;
         this.last = [1,0];
+        
 
         //let snake = [  {x: 150, y: 150},  {x: 140, y: 150},  {x: 130, y: 150},  {x: 120, y: 150},  {x: 110, y: 150},];
         this.y = 0;
+        let sege =[];
     }
+
 
 run(){
     this.change();
@@ -60,12 +63,23 @@ segment(){
     for(var x=1;x<this.last.length;x++){
         var z = this.last.length;
         fill(255,100,0);//make random color
-        if(this.seg>1){
-        rect(this.last[z-(this.seg-1)].x,this.last[z-(this.seg-1)].y, 20, 20);
+        //if(this.seg>1){
+        for(var i=0;i<(this.seg-1);i++){//move make sege
+            sege[i] = new snek(this.last[z-(this.seg-1)].x,this.last[z-(this.seg-1)].y);
+
+            //rect(this.last[z-(this.seg-1)].x,this.last[z-(this.seg-1)].y, 20, 20);//need a class
         }
+                        
+        // for(x=0;x<this.seg.length;x++){
+        //     sege[x].run();                  //run this once sege works
+        //  }
+        
     }
 
+     }
 
+
+    //rect(this.last[z-(this.seg-1)].x,this.last[z-(this.seg-1)].y, 20, 20);
 
 
     // for(var x=1;x<this.last.length;x++){
@@ -81,7 +95,7 @@ segment(){
 
 
 
-}
+
 render(){
     fill(255,255,0);//make random color
     rectMode(CENTER);//make it so the center moves
