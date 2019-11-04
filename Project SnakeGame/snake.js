@@ -14,26 +14,28 @@ run(){
 change(){
     if (keyIsPressed){
         if (keyCode === LEFT_ARROW) {
-             this.lastx = this.loc.x;//replace this tomfoolery with an array when you have time
-             this.lasty = this.loc.y;
-            this.loc.x=this.loc.x-20;
+            //replace this tomfoolery with an array when you have time
+            //declare a new vector every time with the value of the thing in front of it
+             var y = this.seg.length;
+             this.last = createVector(this.loc.x,this.loc.y);
+             this.loc.x=this.loc.x-20;
             console.log("left");
         }
         if (keyCode === RIGHT_ARROW) {
-            this.lastx = this.loc.x;
-            this.lasty = this.loc.y;
+            var y = this.seg.length;
+            this.last = createVector(this.loc.x,this.loc.y);
             this.loc.x=this.loc.x+20;
           console.log("right");
         }
         if (keyCode === DOWN_ARROW) {
-            this.lasty = this.loc.y;
-            this.lastx = this.loc.x;
+            var y = this.seg.length;
+            this.last = createVector(this.loc.x,this.loc.y);
             this.loc.y=this.loc.y+20;
           console.log("down");
         }
         if (keyCode === UP_ARROW) {
-            this.lasty = this.loc.y;
-            this.lastx = this.loc.x;
+            var y = this.seg.length;
+            this.last = createVector(this.loc.x,this.loc.y);
             this.loc.y=this.loc.y-20;
           console.log("up");
         }
@@ -50,7 +52,7 @@ segment(){
     // }
     for(var x=1;x<this.seg;x++){
         fill(255,100,0);//make random color
-        rect(this.lastx+((x-1)*20),this.lasty, 20, 20);
+        rect(this.last.x,this.last.y, 20, 20);
     }
 }
 render(){
