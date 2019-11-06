@@ -28,17 +28,15 @@ function sneke(){
     var z = snake.last.length;
     fill(255,100,0);//make random color
     //if(this.seg>1){
-    for(var i=0;i<(snake.seg-1);i++){//move make sege
-      console.log("here" + snake.last.length);
+    for(var i=0;i<(snake.seg-1);i++){//move make sege    //is being redeclared every time
         sege[i] = new snek(snake.last[z-(snake.seg-1)].x,snake.last[z-(snake.seg-1)].y);
-        console.log(sege[1]);
      //rect(this.last[z-(this.seg-1)].x,this.last[z-(this.seg-1)].y, 20, 20);//need a class
     }
 }
 
 for(var x=0;x<sege.length;x++){
-  console.log("runityrunrun");
-  sege[x].run();                       //run this once sege works
-}
+  console.log("run: "+x)
+  sege[x].run();                    //run this once sege works
+  }
 }
 

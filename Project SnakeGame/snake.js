@@ -54,11 +54,9 @@ segment(){
     //segmentation fault, hopefully not
     if(this.loc.x==food.loc.x&&this.loc.y==food.loc.y){
         this.seg++;
-        console.log(this.seg);
     }
     // if(this.seg>this.segs){  
     // }
-    console.log(this.last.length);
     // for(var x=1;x<this.last.length;x++){
     //     var z = this.last.length;
     //     fill(255,100,0);//make random color
