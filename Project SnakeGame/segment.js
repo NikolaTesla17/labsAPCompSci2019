@@ -6,6 +6,7 @@ class snek{//to make new bars easy to add more
     run(){
         fill(255,0,0);//make red
         fill(0,100,255);
+        console.log("runrunrunrunrunrun");
         rect(this.loc.x,this.loc.y,20,20);
     }
     }
