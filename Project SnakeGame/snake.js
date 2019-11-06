@@ -24,28 +24,23 @@ change(){
             //replace this tomfoolery with an array when you have time
             //declare a new vector every time with the value of the thing in front of it
              this.y++;
-             console.log(this.y);
              this.last[this.y] = createVector(this.loc.x,this.loc.y);
              this.loc.x=this.loc.x-20;
-            console.log("left");
         }
         if (keyCode === RIGHT_ARROW) {
             this.y++;
             this.last[this.y] = createVector(this.loc.x,this.loc.y);
             this.loc.x=this.loc.x+20;
-          console.log("right");
         }
         if (keyCode === DOWN_ARROW) {
             this.y++;
             this.last[this.y] = createVector(this.loc.x,this.loc.y);
             this.loc.y=this.loc.y+20;
-          console.log("down");
         }
         if (keyCode === UP_ARROW) {
             this.y++;
             this.last[this.y] = createVector(this.loc.x,this.loc.y);
             this.loc.y=this.loc.y-20;
-          console.log("up");
         }
     }
 
