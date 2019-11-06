@@ -13,7 +13,7 @@ function setup() {
   snake = new snake();
 }
 
-var sege = [1,2];
+var sege = [];
 //  The draw function is called @ 30 fps
 function draw() {
   background(5, 5, 5);
@@ -30,13 +30,15 @@ function sneke(){
     //if(this.seg>1){
     for(var i=0;i<(snake.seg-1);i++){//move make sege
       console.log("here" + snake.last.length);
-      console.log(snake.last[1].x);
         sege[i] = new snek(snake.last[z-(snake.seg-1)].x,snake.last[z-(snake.seg-1)].y);
+        console.log(sege[1]);
      //rect(this.last[z-(this.seg-1)].x,this.last[z-(this.seg-1)].y, 20, 20);//need a class
     }
 }
-for(var x=0;x<snake.seg.length;x++){
-  sege[x].run();                  //run this once sege works
+
+for(var x=0;x<sege.length;x++){
+  console.log("runityrunrun");
+  sege[x].run();                       //run this once sege works
 }
 }
 
