@@ -65,3 +65,40 @@ while not done:
 
     old_segment = snake_segments.pop()
     sprites.remove(old_segment)
+
+    x = snake_segments[0].rect.x + x_change
+    y = snake_segments[0].rect.y + y_change
+    segment = Segment(x, y)
+
+    snake_segments.insert(0, segment)
+    sprites.add(segment)
+
+    screen.fill((0, 0, 0))
+
+    sprites.draw(screen)
+
+    if food == 0:
+        foodX = random.randint(1,11)*18+250
+        foodY = random.randint(1,11)*18+30
+        food = 1
+        print(foodX, foodY)
+    pygame.draw.rect(screen, BLUE, (foodX, foodY, 15, 15))
+
+    if foodX == x and foodY == y:
+        food = 0
+        segs = segs+1
+        sprites.add(segment)
+
+        x = snake_segments[0].rect.x + x_change
+        y = snake_segments[0].rect.y + y_change
+        segment = Segment(x, y)
+
+        snake_segments.insert(0, segment)
+        sprites.add(segment)
+
+    pygame.display.update()
+    clock.tick(5)
+    print(segs)
+pygame.quit()
+
+#implement speed boost if shift pressed
