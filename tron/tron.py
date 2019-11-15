@@ -6,14 +6,14 @@ BLACK = (0, 0, 0)
 RED = (255, 0, 0)
 BLUE = (0, 0, 255)
 
-playerOne = pygame.image.load('blueL.jpg')
-playerOne = pygame.image.load('blueR.jpg')
-playerOne = pygame.image.load('blueU.jpg')
-playerOne = pygame.image.load('blueD.jpg')
-playerTwo = pygame.image.load('orangeL.jpg')
-playerTwo = pygame.image.load('orangeD.jpg')
-playerTwo = pygame.image.load('orangeR.jpg')
-playerTwo = pygame.image.load('orangeU.jpg')
+playerOneL = pygame.image.load('blueL.jpg')
+playerOneR = pygame.image.load('blueR.jpg')
+playerOneU = pygame.image.load('blueU.jpg')
+playerOneD = pygame.image.load('blueD.jpg')
+playerTwoL= pygame.image.load('orangeL.jpg')
+playerTwoD = pygame.image.load('orangeD.jpg')
+playerTwoR = pygame.image.load('orangeR.jpg')
+playerTwoU = pygame.image.load('orangeU.jpg')
 
 class Player:
     def __init__(self, x, y, d, c):
@@ -29,10 +29,24 @@ class Player:
         self.rect = pygame.Rect(self.x - 1, self.y - 1, 2, 2) 
         pygame.draw.rect(screen, self.col, self.rect, 0)
         if self.col == RED:
+            if self.dir == (-2, 0):
+                screen.blit(playerOneL, (self.x-10, self.y-10))
+            if self.dir == (2, 0):
+                screen.blit(playerOneR, (self.x+10, self.y-10))
             if self.dir == (0, -2):
-                screen.blit(playerOne, (self.x+10, self.y-10))
+                screen.blit(playerOneU, (self.x+10, self.y-10))
+            if self.dir == (0, 2):
+                screen.blit(playerOneD, (self.x+10, self.y-10))
+
         if self.col == BLUE:
-            screen.blit(playerTwo, (self.x, self.y-10))
+            if self.dir == (-2, 0):
+                screen.blit(playerTwoL, (self.x+10, self.y-10))
+            if self.dir == (2, 0):
+                screen.blit(playerTwoR, (self.x+10, self.y-10))
+            if self.dir == (0, -2):
+                screen.blit(playerTwoU, (self.x+10, self.y-10))
+            if self.dir == (0, 2):
+                screen.blit(playerTwoD, (self.x+10, self.y-10))
 
     def __update__(self):
             self.x += self.dir[0]
