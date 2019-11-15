@@ -30,9 +30,9 @@ class Player:
         pygame.draw.rect(screen, self.col, self.rect, 0)
         if self.col == RED:
             if self.dir == (-2, 0):
-                screen.blit(playerOneL, (self.x-10, self.y-10))
+                screen.blit(playerOneL, (self.x+10, self.y-10))
             if self.dir == (2, 0):
-                screen.blit(playerOneR, (self.x+10, self.y-10))
+                screen.blit(playerOneR, (self.x-20, self.y))
             if self.dir == (0, -2):
                 screen.blit(playerOneU, (self.x+10, self.y-10))
             if self.dir == (0, 2):
@@ -40,7 +40,7 @@ class Player:
 
         if self.col == BLUE:
             if self.dir == (-2, 0):
-                screen.blit(playerTwoL, (self.x+10, self.y-10))
+                screen.blit(playerTwoL, (self.x-10, self.y-10))
             if self.dir == (2, 0):
                 screen.blit(playerTwoR, (self.x+10, self.y-10))
             if self.dir == (0, -2):
