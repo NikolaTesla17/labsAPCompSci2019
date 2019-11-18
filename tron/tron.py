@@ -115,8 +115,7 @@ while not done:
     for o in objects:
 
         if (o.rect, '1') in path or (o.rect, '2') in path \
-           or o.rect.collidelist(wall_rects) > -1:  # collided with path or wall
-            # prevent player from hitting the path they just made
+           or o.rect.collidelist(wall_rects) > -1:
             if (time.time() - check_time) >= 0.1:
                 check_time = time.time()
 
@@ -129,7 +128,7 @@ while not done:
                 objects = [new_p1, new_p2]
                 path = [(p1.rect, '1'), (p2.rect, '2')]
                 break
-        else:  # not yet traversed
+        else: 
             path.append((o.rect, '1')) if o.col == BLUE else path.append((o.rect, '2'))
 
         o.__draw__()
@@ -142,15 +141,21 @@ while not done:
             break
         if r[1] == '1': pygame.draw.rect(screen, RED, r[0], 0)
         else: pygame.draw.rect(screen, BLUE, r[0], 0)
+    
+    font = pygame.font.Font('freesansbold.ttf', 32) 
+    score1 = "{}".format(player_score[1])
+    text = font.render(score1, True, RED) 
+    textRect = text.get_rect() 
+    textRect.center = (40, 100) 
+    screen.blit(text, textRect) 
 
-    # display the current score on the screen
-    # score_text = font.render('{0} : {1}'.format(player_score[0], player_score[1]), 1, (255, 153, 51))
-    # score_text_pos = score_text.get_rect()
-    # score_text_pos.centerx = int(600 / 2)
-    # score_text_pos.centery = int(600 / 2)
-    # screen.blit(score_text, score_text_pos)
+    score = ": {}".format(player_score[0])
+    text = font.render(score, True, BLUE) 
+    textRect = text.get_rect() 
+    textRect.center = (70, 100) 
+    screen.blit(text, textRect) 
 
-    pygame.display.flip()  # flips display
-    clock.tick(60)  # regulates FPS
 
+    pygame.display.update() 
+    clock.tick(60)  
 pygame.quit()
