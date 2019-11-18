@@ -3,8 +3,8 @@ import time
 pygame.init()
 
 BLACK = (0, 0, 0)
-RED = (255, 0, 0)
-BLUE = (0, 0, 255)
+RED = (36, 207, 237)
+BLUE = (246, 221, 73)
 
 playerOneL = pygame.image.load('blueL.jpg')
 playerOneR = pygame.image.load('blueR.jpg')
@@ -28,25 +28,25 @@ class Player:
     def __draw__(self):
         self.rect = pygame.Rect(self.x - 1, self.y - 1, 2, 2) 
         pygame.draw.rect(screen, self.col, self.rect, 0)
-        if self.col == RED:
-            if self.dir == (-2, 0):
-                screen.blit(playerOneL, (self.x+10, self.y-10))
-            if self.dir == (2, 0):
-                screen.blit(playerOneR, (self.x-20, self.y))
-            if self.dir == (0, -2):
-                screen.blit(playerOneU, (self.x+10, self.y-10))
-            if self.dir == (0, 2):
-                screen.blit(playerOneD, (self.x+10, self.y-10))
-
         if self.col == BLUE:
-            if self.dir == (-2, 0):
-                screen.blit(playerTwoL, (self.x-10, self.y-10))
-            if self.dir == (2, 0):
-                screen.blit(playerTwoR, (self.x+10, self.y-10))
-            if self.dir == (0, -2):
-                screen.blit(playerTwoU, (self.x+10, self.y-10))
-            if self.dir == (0, 2):
-                screen.blit(playerTwoD, (self.x+10, self.y-10))
+            if self.dir == (-2, 0):#Left good
+                screen.blit(playerOneL, (self.x-30, self.y-10))#Refractor ccode
+            if self.dir == (2, 0):#Right
+                screen.blit(playerOneR, (self.x-20, self.y-10))
+            if self.dir == (0, -2):#Up
+                screen.blit(playerOneU, (self.x-8, self.y-30))
+            if self.dir == (0, 2):#Down
+                screen.blit(playerOneD, (self.x-10, self.y-10))
+
+        if self.col == RED:
+            if self.dir == (-2, 0):#Left good
+                screen.blit(playerTwoL, (self.x-30, self.y-10))
+            if self.dir == (2, 0):#Right
+                screen.blit(playerTwoR, (self.x-10, self.y-10))
+            if self.dir == (0, -2):#Up
+                screen.blit(playerTwoU, (self.x-12, self.y-30))
+            if self.dir == (0, 2):#Down
+                screen.blit(playerTwoD, (self.x-10, self.y-10))
 
     def __update__(self):
             self.x += self.dir[0]
