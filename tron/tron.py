@@ -3,8 +3,8 @@ import time
 pygame.init()
 
 BLACK = (0, 0, 0)
-RED = (36, 207, 237)#switch these back when time    this thing has 30% cpu usage
-BLUE = (246, 221, 73)
+BLUE = (36, 207, 237)#this thing has 30% cpu usage, probably do something about that
+RED = (246, 221, 73)
 
 playerOneL = pygame.image.load('blueL.jpg')
 playerOneR = pygame.image.load('blueR.jpg')
@@ -27,7 +27,7 @@ class Player:
     def __draw__(self):
         self.rect = pygame.Rect(self.x - 1, self.y - 1, 2, 2) 
         pygame.draw.rect(screen, self.col, self.rect, 0)
-        if self.col == BLUE:
+        if self.col == RED:
             if self.dir == (-2, 0):#Left
                 screen.blit(playerOneL, (self.x-30, self.y-10))
             if self.dir == (2, 0):#Right
@@ -37,7 +37,7 @@ class Player:
             if self.dir == (0, 2):#Down
                 screen.blit(playerOneD, (self.x-10, self.y-10))
 
-        if self.col == RED:
+        if self.col == BLUE:
             if self.dir == (-2, 0):#Left good
                 screen.blit(playerTwoL, (self.x-30, self.y-10))
             if self.dir == (2, 0):#Right
