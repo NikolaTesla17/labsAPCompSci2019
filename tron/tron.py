@@ -88,8 +88,6 @@ wall_rects = [pygame.Rect([0, 60, 15, 600]) , pygame.Rect([0, 60, 600, 15]),\
 done = False
 new = False
 
-
-
 while not done:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:  # close button pressed
