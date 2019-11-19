@@ -15,6 +15,13 @@ playerTwoD = pygame.image.load('orangeD.jpg')
 playerTwoR = pygame.image.load('orangeR.jpg')
 playerTwoU = pygame.image.load('orangeU.jpg')
 
+song = 'wilds.ogg'
+
+pygame.mixer.init()
+pygame.mixer.music.load(song)
+
+pygame.mixer.music.play(-1)
+
 class Player:
     def __init__(self, x, y, d, c):
         self.x = x
@@ -81,6 +88,8 @@ wall_rects = [pygame.Rect([0, 60, 15, 600]) , pygame.Rect([0, 60, 600, 15]),\
 done = False
 new = False
 
+
+
 while not done:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:  # close button pressed
@@ -107,7 +116,7 @@ while not done:
 
     screen.fill(BLACK) 
 
-    for r in wall_rects: pygame.draw.rect(screen, (42, 42, 42), r, 0) 
+    for r in wall_rects: pygame.draw.rect(screen, (50, 50, 50), r, 0) 
 
     for o in objects:
 
@@ -124,7 +133,6 @@ while not done:
                 new_p1, new_p2 = new_game()
                 objects = [new_p1, new_p2]
                 path = [(p1.rect, '1'), (p2.rect, '2')]
-                break
         else: 
             path.append((o.rect, '1')) if o.col == BLUE else path.append((o.rect, '2'))
 
