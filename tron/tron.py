@@ -3,7 +3,7 @@ import time
 pygame.init()
 
 BLACK = (0, 0, 0)
-RED = (36, 207, 237)
+RED = (36, 207, 237)#switch these back when time    this thing has 30% cpu usage
 BLUE = (246, 221, 73)
 
 playerOneL = pygame.image.load('blueL.jpg')
@@ -19,7 +19,6 @@ class Player:
     def __init__(self, x, y, d, c):
         self.x = x
         self.y = y
-        self.speed = 1
         self.dir = d
         self.col = c
 
@@ -29,8 +28,8 @@ class Player:
         self.rect = pygame.Rect(self.x - 1, self.y - 1, 2, 2) 
         pygame.draw.rect(screen, self.col, self.rect, 0)
         if self.col == BLUE:
-            if self.dir == (-2, 0):#Left good
-                screen.blit(playerOneL, (self.x-30, self.y-10))#Refractor ccode
+            if self.dir == (-2, 0):#Left
+                screen.blit(playerOneL, (self.x-30, self.y-10))
             if self.dir == (2, 0):#Right
                 screen.blit(playerOneR, (self.x-20, self.y-10))
             if self.dir == (0, -2):#Up
@@ -61,8 +60,6 @@ def new_game():
 
 screen = pygame.display.set_mode((600, 600))
 
-font = pygame.font.Font(None, 72)
-
 clock = pygame.time.Clock()
 check_time = time.time()
 
@@ -75,7 +72,7 @@ path.append((p1.rect, '1'))
 objects.append(p2)
 path.append((p2.rect, '2'))
 
-player_score = [0, 0]  # current player score
+player_score = [0, 0]
 
 wall_rects = [pygame.Rect([0, 60, 15, 600]) , pygame.Rect([0, 60, 600, 15]),\
               pygame.Rect([600 - 15, 60, 15, 600]),\
@@ -108,9 +105,9 @@ while not done:
             elif event.key == pygame.K_RIGHT:
                 objects[1].dir = (2, 0)
 
-    screen.fill(BLACK)  # clears the screen
+    screen.fill(BLACK) 
 
-    for r in wall_rects: pygame.draw.rect(screen, (42, 42, 42), r, 0)  # draws the walls
+    for r in wall_rects: pygame.draw.rect(screen, (42, 42, 42), r, 0) 
 
     for o in objects:
 
