@@ -85,34 +85,47 @@ wall_rects = [pygame.Rect([0, 60, 15, 600]) , pygame.Rect([0, 60, 600, 15]),\
               pygame.Rect([600 - 15, 60, 15, 600]),\
               pygame.Rect([0, 600 - 15, 600, 15])]
 
-done = False
 new = False
+done = False
+
+x = 1
+y = 1
 
 while not done:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:  # close button pressed
             done = True
         elif event.type == pygame.KEYDOWN:
+
+            if event.key == pygame.K_LSHIFT:
+                x = 2
+            if event.key == pygame.K_RSHIFT:
+                y = 2
+            
           
             if event.key == pygame.K_w:
-                objects[0].dir = (0, -2)
+                objects[0].dir = (0, -2*x)
             elif event.key == pygame.K_s:
-                objects[0].dir = (0, 2)
+                objects[0].dir = (0, 2*x)
             elif event.key == pygame.K_a:
-                objects[0].dir = (-2, 0)
+                objects[0].dir = (-2*x, 0)
             elif event.key == pygame.K_d:
-                objects[0].dir = (2, 0)
+                objects[0].dir = (2*x, 0)
 
             if event.key == pygame.K_UP:
-                objects[1].dir = (0, -2)
+                objects[1].dir = (0, -2*y)
             elif event.key == pygame.K_DOWN:
-                objects[1].dir = (0, 2)
+                objects[1].dir = (0, 2*y)
             elif event.key == pygame.K_LEFT:
-                objects[1].dir = (-2, 0)
+                objects[1].dir = (-2*y, 0)
             elif event.key == pygame.K_RIGHT:
-                objects[1].dir = (2, 0)
+                objects[1].dir = (2*y, 0)
 
     screen.fill(BLACK) 
+    tim = pygame.time.get_ticks()
+    if tim%50 == 0:
+        x = 1
+        y = 1
 
     for r in wall_rects: pygame.draw.rect(screen, (50, 50, 50), r, 0) 
 
@@ -142,8 +155,8 @@ while not done:
             path = []
             new = False
             break
-        if r[1] == '1': pygame.draw.rect(screen, RED, r[0], 0)
-        else: pygame.draw.rect(screen, BLUE, r[0], 0)
+        if r[1] == '1': pygame.draw.rect(screen, RED, r[0], 1)
+        else: pygame.draw.rect(screen, BLUE, r[0], 1)
     
     font = pygame.font.Font('freesansbold.ttf', 32) 
     score1 = "{}".format(player_score[1])
