@@ -2,9 +2,11 @@ import pygame
 import time
 pygame.init()
 
+
 BLACK = (0, 0, 0)
 BLUE = (36, 207, 237)#this thing has 30% cpu usage, probably do something about that
-RED = (246, 221, 73)
+RED = (246, 221, 73)#currently working, base game music and boosting
+#todo add loading screen explaning rules    add sound effects for boost and collisions figure out and fix bike disapering when boosting
 
 playerOneL = pygame.image.load('blueL.jpg')
 playerOneR = pygame.image.load('blueR.jpg')
@@ -58,12 +60,23 @@ class Player:
             self.x += self.dir[0]
             self.y += self.dir[1]
 
-
 def new_game():
+
     new_p1 = Player(50, 600 / 2, (2, 0), RED)
     new_p2 = Player(600 - 50, 600 / 2, (-2, 0), BLUE)
     return new_p1, new_p2
 
+def load_screen():
+    v = False
+    if v == False:
+        font = pygame.font.Font('freesansbold.ttf', 32) 
+        text = font.render("score", True, BLUE) 
+        textRect = text.get_rect() 
+        textRect.center = (300, 300) 
+        screen.blit(text, textRect) 
+        print("I tried")
+        pygame.time.wait(500)
+        v == True
 
 screen = pygame.display.set_mode((600, 600))
 
@@ -80,6 +93,7 @@ objects.append(p2)
 path.append((p2.rect, '2'))
 
 player_score = [0, 0]
+load_screen()
 
 wall_rects = [pygame.Rect([0, 60, 15, 600]) , pygame.Rect([0, 60, 600, 15]),\
               pygame.Rect([600 - 15, 60, 15, 600]),\
