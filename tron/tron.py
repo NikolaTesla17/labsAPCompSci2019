@@ -1,6 +1,7 @@
 import pygame
 import time
 pygame.init()
+pygame.font.init()
 
 
 BLACK = (0, 0, 0)
@@ -65,18 +66,8 @@ def new_game():
     new_p1 = Player(50, 600 / 2, (2, 0), RED)
     new_p2 = Player(600 - 50, 600 / 2, (-2, 0), BLUE)
     return new_p1, new_p2
+     
 
-def load_screen():
-    v = False
-    if v == False:
-        font = pygame.font.Font('freesansbold.ttf', 32) 
-        text = font.render("score", True, BLUE) 
-        textRect = text.get_rect() 
-        textRect.center = (300, 300) 
-        screen.blit(text, textRect) 
-        print("I tried")
-        pygame.time.wait(500)
-        v == True
 
 screen = pygame.display.set_mode((600, 600))
 
@@ -93,7 +84,6 @@ objects.append(p2)
 path.append((p2.rect, '2'))
 
 player_score = [0, 0]
-load_screen()
 
 wall_rects = [pygame.Rect([0, 60, 15, 600]) , pygame.Rect([0, 60, 600, 15]),\
               pygame.Rect([600 - 15, 60, 15, 600]),\
@@ -105,6 +95,30 @@ done = False
 x = 1
 y = 1
 
+
+def load_screen():
+    v = False
+    while v == False:
+        event = pygame.event.wait()
+
+        font = pygame.font.Font('freesansbold.ttf', 32) 
+        text = font.render("Welcome To Tron", True, BLUE) 
+        textRect = text.get_rect() 
+        textRect.center = (300, 200) 
+        screen.blit(text, textRect) 
+
+        font = pygame.font.Font('freesansbold.ttf', 16) 
+        text = font.render("Press any key to continue", True, BLUE) 
+        textRect = text.get_rect() 
+        textRect.center = (300, 300) 
+        screen.blit(text, textRect) 
+        pygame.display.update()
+
+        if event.type == pygame.KEYDOWN:
+            v = True    
+
+load_screen()
+
 while not done:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:  # close button pressed
@@ -112,9 +126,11 @@ while not done:
         elif event.type == pygame.KEYDOWN:
 
             if event.key == pygame.K_LSHIFT:
-                x = 2
+                #x = 2
+                print("you could be boosting")
             if event.key == pygame.K_RSHIFT:
-                y = 2
+                #y = 2
+                print("you could be boosting")
             
           
             if event.key == pygame.K_w:
