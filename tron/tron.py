@@ -66,8 +66,6 @@ def new_game():
     new_p1 = Player(50, 600 / 2, (2, 0), RED)
     new_p2 = Player(600 - 50, 600 / 2, (-2, 0), BLUE)
     return new_p1, new_p2
-     
-
 
 screen = pygame.display.set_mode((600, 600))
 
@@ -100,6 +98,8 @@ def load_screen():
     v = False
     while v == False:
         event = pygame.event.wait()
+
+        screen.fill(BLACK) 
 
         font = pygame.font.Font('freesansbold.ttf', 32) 
         text = font.render("Welcome To Tron", True, BLUE) 
@@ -175,7 +175,10 @@ while not done:
                 objects = [new_p1, new_p2]
                 path = [(p1.rect, '1'), (p2.rect, '2')]
         else: 
-            path.append((o.rect, '1')) if o.col == BLUE else path.append((o.rect, '2'))
+            if o.col == BLUE:
+                path.append((o.rect, '1'))
+            else:
+                path.append((o.rect, '2'))
 
         o.__draw__()
         o.__update__()
