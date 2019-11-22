@@ -38,23 +38,23 @@ class Player:
         self.rect = pygame.Rect(self.x - 1, self.y - 1, 2, 2) 
         pygame.draw.rect(screen, self.col, self.rect, 0)
         if self.col == RED:
-            if self.dir == (-2, 0):#Left
+            if self.dir == (-2*x, 0):#Left
                 screen.blit(playerOneL, (self.x-30, self.y-10))
-            if self.dir == (2, 0):#Right
+            if self.dir == (2*x, 0):#Right
                 screen.blit(playerOneR, (self.x-20, self.y-10))
-            if self.dir == (0, -2):#Up
+            if self.dir == (0, -2*x):#Up
                 screen.blit(playerOneU, (self.x-8, self.y-30))
-            if self.dir == (0, 2):#Down
+            if self.dir == (0, 2*x):#Down
                 screen.blit(playerOneD, (self.x-10, self.y-10))
 
-        if self.col == BLUE:
-            if self.dir == (-2, 0):#Left good
+        elif self.col == BLUE:
+            if self.dir == (-2*y, 0):#Left good
                 screen.blit(playerTwoL, (self.x-30, self.y-10))
-            if self.dir == (2, 0):#Right
+            if self.dir == (2*y, 0):#Right
                 screen.blit(playerTwoR, (self.x-10, self.y-10))
-            if self.dir == (0, -2):#Up
+            if self.dir == (0, -2*y):#Up
                 screen.blit(playerTwoU, (self.x-12, self.y-30))
-            if self.dir == (0, 2):#Down
+            if self.dir == (0, 2*y):#Down
                 screen.blit(playerTwoD, (self.x-10, self.y-10))
 
     def __update__(self):
@@ -126,10 +126,10 @@ while not done:
         elif event.type == pygame.KEYDOWN:
 
             if event.key == pygame.K_LSHIFT:
-                #x = 2
+                x = 2
                 print("you could be boosting")
             if event.key == pygame.K_RSHIFT:
-                #y = 2
+                y = 2
                 print("you could be boosting")
             
           
