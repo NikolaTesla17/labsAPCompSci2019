@@ -25,6 +25,12 @@ class Ball {
       if (this.loc.y > height) { //up
         this.vel.y = -this.vel.y*random()*2;
       }
+
+      var dist = this.loc.dist(ships[0].loc);
+      if(dist < 80){
+        this.loc.x = Math.floor((Math.random() * 700) + 50);
+        this.loc.y = Math.floor((Math.random() * 700) + 50);
+      }
     }
     this.update = function () {
         this.vel.limit(2);
