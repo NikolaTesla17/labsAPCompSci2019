@@ -1,5 +1,5 @@
 
-class Ball {
+class Planet {
   constructor(x, y, dx, dy, id) {
     this.clr = color(random(255), random(255), random(255));
     this.loc = createVector(x, y);

@@ -1,4 +1,4 @@
-class Triangle {
+class ship {
     constructor(x, y, dx, dy, id) {
       this.clr = color(random(255), random(255), random(255));
       this.loc = createVector(x, y);
@@ -28,21 +28,14 @@ class Triangle {
       }
       this.update = function () {
         if (id > -1) {
-          var dist = this.loc.dist(mainBall.loc);
+          var dist = this.loc.dist(planet.loc);
           if (dist > 11&&dist < 350) {
-            this.Force = p5.Vector.sub(mainBall.loc, this.loc);//attract
+            this.Force = p5.Vector.sub(planet.loc, this.loc);//attract
             this.Force.normalize();
             this.Force.mult(0.6);
             this.vel.add(this.Force);
             this.vel.add(this.acc);
           }
-          if (dist < 11) {
-            this.Force = p5.Vector.sub(this.loc, mainBall.loc);//push
-            this.Force.normalize();
-            this.Force.mult(0.8);
-            this.vel.add(this.Force);
-            this.vel.add(this.acc);
-          }   
           this.loc.add(this.vel); //add velocity to make gravity
         }
           this.vel.limit(2);
@@ -54,7 +47,6 @@ class Triangle {
       let myHeading = this.vel.heading();//
       translate(this.loc.x, this.loc.y)//for orgin
       rotate(myHeading, 0);//rotate hopefully to where it is pointing
-      console.log(myHeading);
       triangle(-10, 10, -10, -10, 10, 0);//make perfet triangle
       pop();//things matter again
     }
