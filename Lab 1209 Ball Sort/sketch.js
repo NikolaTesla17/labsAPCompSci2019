@@ -1,38 +1,30 @@
 //  Nayan Smuek
-// 	8/21/19
-//  Project 8/22
-
-var ships = [];
-var planet;
-var x = 1; //user entered number of balls page dialog
 function setup() {
-  var cnv = createCanvas(800, 800);
-  cnv.position((windowWidth-width)/2, 30);
-  background(5, 5, 5);
-  fill(200, 30, 150);
-  loadAll(x);
+   var ctx = createCanvas(600, 600);//make canvas
+   ctx.position((windowWidth-width)/2, 30);//put canvas in the middle
+   background(5, 5, 5);//make black background
+   fill(200, 30, 150);//make color
+//to be sorted
+balls = [];
+for(q=0;q<20;q++){//loop to create enough balls
+   var red = Math.floor(Math.random() * 255) + 1;
+   balls[q] = new Ball(50+(10*q),300,random(-5,5),random(-5,5),red)//make the game balls 
 }
 
-function loadAll(n){
-  for(q=0;q<x;q++){
-    planet = new Planet(100, 500, 50, 50, -1);
-    ships[q] = new ship(random(800), random(800), random(-3, 3), random(-3, 3), q);
-  }
+for(i = 0;i<20;i++){
+   for(var x = 0; x < 20; x++){//run balls once
+      balls[i].run();//run the ball
+    }
+    console.log(i);
+   curent=balls[i].clr;
+   var prev;
+   for(var prev = i - 1; prev >= 0 && balls[prev].clr > curent; prev--) {
+      balls[prev+1].clr = balls[prev].clr;
+    }
+   balls[prev+1].clr = curent;
 }
+}//end setup
 
-
+//  The draw function is called @ 30 fps
 function draw() {
-  background(5, 5, 5, 60);
-  for(var i = 0; i < ships.length; i++){
-    ships[i].run();
-  } planet.run();
-}
-
-function shipsDraw(){
-  //background(5,5,5)//get trails back but just a little bit
-if (this.id > -1){
-  for(i=0;i<x;i++){
-ships[i].run();
-  }
-}
 }
