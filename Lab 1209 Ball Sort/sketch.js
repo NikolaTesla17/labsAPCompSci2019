@@ -8,12 +8,12 @@ function setup() {
 balls = [];
 for(q=0;q<20;q++){//loop to create enough balls
    var red = Math.floor(Math.random() * 255) + 1;
-   balls[q] = new Ball(50+(10*q),300,random(-5,5),random(-5,5),red)//make the game balls 
+   balls[q] = new Ball(50+(10*q),300,red)//make the game balls 
 }
 
 for(i = 0;i<20;i++){
    for(var x = 0; x < 20; x++){//run balls once
-      balls[i].run();//run the ball
+      balls[x].run();//run the ball
     }
     console.log(i);
    curent=balls[i].clr;
