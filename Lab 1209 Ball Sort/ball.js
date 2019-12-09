@@ -7,8 +7,8 @@ class Ball{//to make new balls easy to add more
       this.render();//draw ball
     }//end run
     render(){//render one frame
-      fill(this.clr*2,0,0);//make this color
-      ellipse(20+(2*this.clr), 300, 40, 40);//render ball, change if you want other shapes
-      background(5,5,5,25);//give slight trail
+      fill(200+this.clr*2,0,0);//make this color
+      ellipse(this.loc.x, 300, 20, 20);//render ball, change if you want other shapes
+      background(5,5,255,25);//give slight trail
     }
   }

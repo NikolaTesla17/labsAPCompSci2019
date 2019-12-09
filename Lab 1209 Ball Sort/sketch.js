@@ -8,7 +8,7 @@ function setup() {
 balls = [];
 for(q=0;q<20;q++){//loop to create enough balls
    var red = Math.floor(Math.random() * 255) + 1;
-   balls[q] = new Ball(50+(10*q),300,red)//make the game balls 
+   balls[q] = new Ball(50+(25*q),300,red)//make the game balls 
 }
 
 for(i = 0;i<20;i++){
