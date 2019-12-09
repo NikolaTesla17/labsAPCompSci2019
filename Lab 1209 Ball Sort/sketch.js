@@ -12,9 +12,6 @@ for(q=0;q<20;q++){//loop to create enough balls
 }
 
 for(i = 0;i<20;i++){
-   for(var x = 0; x < 20; x++){//run balls once
-      balls[x].run();//run the ball
-    }
     console.log(i);
    curent=balls[i].clr;
    var prev;
@@ -23,6 +20,9 @@ for(i = 0;i<20;i++){
     }
    balls[prev+1].clr = curent;
 }
+for(var x = 0; x < 20; x++){//run balls once
+   balls[x].run();//run the ball
+ }
 }//end setup
 
 //  The draw function is called @ 30 fps
