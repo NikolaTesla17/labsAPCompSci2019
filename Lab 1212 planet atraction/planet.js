@@ -1,6 +1,5 @@
 class Planet {
   constructor(x, y, dx, dy, id) {
-    this.clr = color(random(255), random(255), random(255));
     this.loc = createVector(x, y);
     this.vel = createVector(dx, dy);
     this.id = id;
@@ -36,8 +35,11 @@ class Planet {
        this.loc.add(this.vel);
     }
     this.render = function () {
+    var r = ((AccSlider.value())*2.55);
+    this.clr = color(r,0,0);
     fill(this.clr);
-    ellipse(this.loc.x, this.loc.y, 50, 50);
+    var size = maxSlider.value();
+    ellipse(this.loc.x, this.loc.y, size+20, size+20);
   }
 }
 }
