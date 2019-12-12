@@ -34,8 +34,6 @@ class Planet {
     this.update = function () {
         this.vel.limit(2);
        this.loc.add(this.vel);
-       this.loc.x = 400;
-       this.loc.y = 400;
     }
     this.render = function () {
     fill(this.clr);

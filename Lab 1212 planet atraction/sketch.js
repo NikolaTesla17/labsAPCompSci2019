@@ -4,7 +4,7 @@
 
 var ships = [];
 var planet;
-var x = 1; //user entered number of balls page dialog
+var x = 3; //user entered number of balls page dialog
 function setup() {
   var cnv = createCanvas(800, 800);
   cnv.position((windowWidth-width)/2, 30);
@@ -27,12 +27,13 @@ function loadAll(n){
 
 
 function draw() {
-  // var slid = maxSlider.value();
-  var acc = AccSlider.value();
   background(5, 5, 5, 60);
   for(var i = 0; i < ships.length; i++){
     ships[i].run();
   } planet.run();
+
+  text('attraction',10, 35);
+  text('max velocity',10, 65);
 }
 
 function shipsDraw(){

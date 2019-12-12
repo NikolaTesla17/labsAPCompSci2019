@@ -33,12 +33,12 @@ class ship {
             this.Force.normalize();
             var slid = (maxSlider.value())/10;
             this.Force.mult(slid);
-            console.log(slid);
             this.vel.add(this.Force);
             this.vel.add(this.acc);
           }
           this.loc.add(this.vel); //add velocity to make gravity
-          this.vel.limit(2);
+          var acc = (AccSlider.value())/10;
+          this.vel.limit(acc);
          this.loc.add(this.vel);
       }
       this.render = function () {
