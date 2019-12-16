@@ -15,7 +15,7 @@ function setup() {
 
 function loadAll(n){
   for(q=0;q<x;q++){
-    planet[q] = new Planet(random(800), random(800), 50, 50, -1);
+    planet[q] = new Planet(random(800), random(800), 50, 50, q);
   }
   ships[0] = new ship(random(800), random(800), random(-3, 3), random(-3, 3), 1);
 }

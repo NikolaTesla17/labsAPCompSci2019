@@ -26,6 +26,12 @@ class Planet {
       if(dist < 120){
         this.loc.x = Math.floor((Math.random() * 700) + 50);
         this.loc.y = Math.floor((Math.random() * 700) + 50);
+
+        if ((planet[0].loc == planet[1])||(planet[2].loc == planet[3])||(planet[1].loc == planet[2])||(planet[0].loc == planet[3])){//checks to make sure planets are not in exact same spot
+          console.log("to close")
+          this.loc.x = Math.floor((Math.random() * 700) + 50);
+          this.loc.y = Math.floor((Math.random() * 700) + 50);
+        }
       }
     }
     this.render = function () {

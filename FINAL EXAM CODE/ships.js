@@ -35,28 +35,24 @@ class ship {
         y = 0;
         var za = 0;
         var zb = 0;
-        if ((this.loc.dist(planet[y].loc))<((this.loc.dist(planet[y+1].loc)))){
+        if ((this.loc.dist(planet[y].loc))<((this.loc.dist(planet[y+1].loc)))){//find if planet 1 or 0 is close
           za = 0;
         } else{
           za = 1;
         }
 
-        if ((this.loc.dist(planet[y+2].loc))<((this.loc.dist(planet[y+3].loc)))){
+        if ((this.loc.dist(planet[y+2].loc))<((this.loc.dist(planet[y+3].loc)))){//find if 2 or 3 is closer
           zb = 2;
         } else{
           zb = 3;
         }
 
         
-        if ((this.loc.dist(planet[za].loc))<((this.loc.dist(planet[zb].loc)))){
+        if ((this.loc.dist(planet[za].loc))<((this.loc.dist(planet[zb].loc)))){//find which of the closer ones is close
           close = za;
         } else{
           close = zb;
         }
-
-        console.log(planet[close].loc)
-        var dist = this.loc.dist(planet[close].loc);
-        console.log(dist);
       }
 
       this.update = function () {
