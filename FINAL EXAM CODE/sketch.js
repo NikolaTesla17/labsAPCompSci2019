@@ -3,8 +3,8 @@
 //  Project 8/22
 
 var ships = [];
-var planet;
-var x = 1; //user entered number of balls page dialog
+var planet = [];
+var x = 4; //user entered number of balls page dialog
 function setup() {
   var cnv = createCanvas(800, 800);
   cnv.position((windowWidth-width)/2, 30);
@@ -15,9 +15,9 @@ function setup() {
 
 function loadAll(n){
   for(q=0;q<x;q++){
-    planet = new Planet(100, 500, 50, 50, -1);
-    ships[q] = new ship(random(800), random(800), random(-3, 3), random(-3, 3), q);
+    planet[q] = new Planet(random(800), random(800), 50, 50, -1);
   }
+  ships[0] = new ship(random(800), random(800), random(-3, 3), random(-3, 3), 1);
 }
 
 
@@ -25,7 +25,10 @@ function draw() {
   background(5, 5, 5, 60);
   for(var i = 0; i < ships.length; i++){
     ships[i].run();
-  } planet.run();
+  } 
+  for(var i = 0; i < planet.length; i++){
+    planet[i].run();
+  } 
 }
 
 function shipsDraw(){

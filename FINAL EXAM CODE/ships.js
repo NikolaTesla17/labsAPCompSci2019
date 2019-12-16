@@ -5,9 +5,12 @@ class ship {
       this.vel = createVector(dx, dy);
       this.id = id;
       this.acc = createVector(0, .1);
+      var x;
+      var close = 0;
   
       this.run = function () {
         this.checkEdges();
+        this.checkClose();
         this.update();
         this.render();
       }
@@ -26,11 +29,41 @@ class ship {
           this.loc.y = 0;
         }
       }
+
+      this.checkClose = function () {
+        x = 0;
+        y = 0;
+        var za = 0;
+        var zb = 0;
+        if ((this.loc.dist(planet[y].loc))<((this.loc.dist(planet[y+1].loc)))){
+          za = 0;
+        } else{
+          za = 1;
+        }
+
+        if ((this.loc.dist(planet[y+2].loc))<((this.loc.dist(planet[y+3].loc)))){
+          zb = 2;
+        } else{
+          zb = 3;
+        }
+
+        
+        if ((this.loc.dist(planet[za].loc))<((this.loc.dist(planet[zb].loc)))){
+          close = za;
+        } else{
+          close = zb;
+        }
+
+        console.log(planet[close].loc)
+        var dist = this.loc.dist(planet[close].loc);
+        console.log(dist);
+      }
+
       this.update = function () {
         if (id > -1) {
-          var dist = this.loc.dist(planet.loc);
-          if (dist > 11&&dist < 350) {
-            this.Force = p5.Vector.sub(planet.loc, this.loc);//attract
+          var dist = this.loc.dist(planet[close].loc);
+          if (dist < 400) {
+            this.Force = p5.Vector.sub(planet[close].loc, this.loc);//attract
             this.Force.normalize();
             this.Force.mult(0.6);
             this.vel.add(this.Force);

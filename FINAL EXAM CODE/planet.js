@@ -2,13 +2,10 @@ class Planet {
   constructor(x, y, dx, dy, id) {
     this.clr = color(random(255), random(255), random(255));
     this.loc = createVector(x, y);
-    this.vel = createVector(dx, dy);
-    this.id = id;
-    this.acc = createVector(0, .1);
+    this.id = id
 
     this.run = function () {
       this.checkEdges();
-      this.update();
       this.render();
     }
     this.checkEdges = function () {
@@ -26,14 +23,10 @@ class Planet {
       }
 
       var dist = this.loc.dist(ships[0].loc);
-      if(dist < 80){
+      if(dist < 120){
         this.loc.x = Math.floor((Math.random() * 700) + 50);
         this.loc.y = Math.floor((Math.random() * 700) + 50);
       }
-    }
-    this.update = function () {
-        this.vel.limit(2);
-       this.loc.add(this.vel);
     }
     this.render = function () {
     fill(this.clr);
