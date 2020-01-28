@@ -19,13 +19,13 @@ ballsDraw();
 
 function ballsDraw(){
   background(5,5,5,50)//get rid of ball trails
-  for(i=0;i<10;i++){
+  for(i=0;i<1;i++){
     boids[i].run();
   }
 }
 
 function loadBoids(){
-  for(q=0;q<10;q++){ //create array with number of balls wanted
+  for(q=0;q<1;q++){ //create array with number of balls wanted
     boids[q] = new boid(random(width),random(height),random(-5,5),random(-5,5))
   }
 }

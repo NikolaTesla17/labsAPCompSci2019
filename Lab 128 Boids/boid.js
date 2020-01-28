@@ -40,5 +40,9 @@ class boid{
         rotate(PI/5);
       }
       pop();
+      if((this.loc.x < boid[0].loc.x + 100&&this.loc.x > boid[0].loc.x - 100)&&(this.loc.y < boid[0].loc.y + 100&&this.loc.y > boid[0].loc.y - 100)){
+
+      }
+      }
     }
   }
