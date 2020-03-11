@@ -17,7 +17,7 @@
         this.loc.x < mainBall.loc.x +50 &&//right
         this.loc.y+ 15 > mainBall.loc.y &&//bottom
         this.loc.y-10 < mainBall.loc.y){//top
-          alert("Hello! I am an alert box!!");
+          alert("Game over");
         }
     }
 
