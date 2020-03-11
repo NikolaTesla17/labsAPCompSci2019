@@ -13,8 +13,10 @@
 
     update(){
       this.loc.x = lerp( this.loc.x, mouseX,  .05)
-      if(this.loc.x == mainBall.loc.x &&//left
-        this.loc.y == mainBall.loc.y){//top
+      if(this.loc.x > mainBall.loc.x-50 &&//left
+        this.loc.x < mainBall.loc.x +50 &&//right
+        this.loc.y+ 15 > mainBall.loc.y &&//bottom
+        this.loc.y-10 < mainBall.loc.y){//top
           alert("Hello! I am an alert box!!");
         }
     }
